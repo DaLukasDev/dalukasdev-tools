@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "eslint ./src --ext .ts,.tsx",
     "clean": "rm -rf node_modules .turbo",
-    "prettier:fix": "prettier --write \"src/**/*.ts*\"",
-    "prettier:check": "prettier --check \"src/**/*.ts*\""
+    "prettier:fix": "prettier --write \"**/*.js*\"",
+    "prettier:check": "prettier --check \"**/*.js*\""
   },
   "dependencies": {
     "eslint-config-next": "latest",

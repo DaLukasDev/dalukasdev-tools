@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "clean": "rm -rf node_modules .turbo",
-    "prettier:fix": "prettier --write \"src/**/*.ts*\"",
-    "prettier:check": "prettier --check \"src/**/*.ts*\""
+    "prettier:fix": "prettier --write \"**/*.ts*\"",
+    "prettier:check": "prettier --check \"**/*.ts*\""
   },
   "dependencies": {
     "@dalukasdev/ui": "*",

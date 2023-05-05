@@ -3,11 +3,18 @@
   "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "lint": "eslint ./src --ext .ts,.tsx",
+    "clean": "rm -rf node_modules .turbo",
+    "prettier:fix": "prettier --write \"src/**/*.ts*\"",
+    "prettier:check": "prettier --check \"src/**/*.ts*\""
+  },
   "dependencies": {
     "eslint-config-next": "latest",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-config-turbo": "latest",
     "eslint-plugin-react": "7.28.0",
-    "eslint-config-turbo": "latest"
+    "typescript": "^5.0.4"
   },
   "publishConfig": {
     "access": "public"

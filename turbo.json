@@ -7,6 +7,15 @@
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "lint": {},
+    "clean": {
+      "outputs": []
+    },
+    "prettier:fix": {
+      "outputs": []
+    },
+    "prettier:check": {
+      "outputs": []
+    },
     "dev": {
       "cache": false,
       "persistent": true

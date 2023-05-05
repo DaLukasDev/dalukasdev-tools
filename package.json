@@ -4,12 +4,21 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "lint:fix": "turbo run lint -- --fix ",
+    "mp:check": "manypkg check",
+    "mp:fix": "manypkg fix",
+    "clean": "turbo run clean && rm -rf ./node_modules ./yarn.lock",
+    "prettier:check": "turbo run prettier:check",
+    "prettier:fix": "turbo run prettier:fix",
+    "plop": "plop"
   },
   "devDependencies": {
+    "@manypkg/cli": "^0.20.0",
     "eslint": "^7.32.0",
     "eslint-config-custom": "*",
+    "plop": "^3.1.2",
     "prettier": "^2.5.1",
+    "prettier-plugin-tailwindcss": "^0.2.8",
     "turbo": "latest"
   },
   "name": "dalukasdev",

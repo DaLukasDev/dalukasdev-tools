@@ -1,0 +1,11 @@
+{
+  "extends": "tsconfig/react-library.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "dist",
+    "noEmit": true,
+    "lib": ["esnext", "dom"]
+  },
+  "include": ["src/", ".eslintrc.js", "../../@types/**/*.d.ts"],
+  "exclude": ["node_modules", ".turbo", "coverage", "dist", "src/**/*.test.ts"]
+}

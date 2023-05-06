@@ -1,5 +1,5 @@
-import { Loader } from '@resqcontrol/ui';
-import { isOdd } from '@resqcontrol/utils';
+import { Loader } from '@dalukasdev/ui';
+import { isOdd } from '@dalukasdev/utils';
 import dayjs from 'dayjs';
 import formatter from 'dayjs/plugin/customParseFormat';
 

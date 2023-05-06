@@ -1,7 +1,6 @@
-import { Select } from '@resqcontrol/ui';
+import { Select } from '@dalukasdev/ui';
 import type { FC } from 'react';
 import { memo, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
 import type { TableFooterProps } from '../@types';
 
 export const TableFooter: FC<TableFooterProps> = ({
@@ -12,7 +11,6 @@ export const TableFooter: FC<TableFooterProps> = ({
   currentPage,
   paginatorProps: { lastPage, total },
 }) => {
-  const { t } = useTranslation();
   const lowerIndex = useMemo(
     () => (currentPage - 1) * currentPageSize + 1,
     [currentPage, currentPageSize]
@@ -28,7 +26,7 @@ export const TableFooter: FC<TableFooterProps> = ({
   const RowsPerPage = memo(() => (
     <div className="mt-2 inline-flex items-center space-x-2">
       <span className="whitespace-nowrap text-sm text-gray-700">
-        {t('table.row-count')}
+        {'row count'}
       </span>
       <Select
         value={currentPageSize}
@@ -39,7 +37,7 @@ export const TableFooter: FC<TableFooterProps> = ({
           { label: '30', value: 30 },
           { label: '40', value: 40 },
           { label: '50', value: 50 },
-          { label: t('table.all'), value: total },
+          { label: 'all', value: total },
         ]}
         onChange={(e) => onPageSizeChange(parseInt(e.target.value))}
       />
@@ -51,7 +49,7 @@ export const TableFooter: FC<TableFooterProps> = ({
     <span className="mt-2 text-sm text-gray-700 dark:text-gray-400">
       <span className="px-1 font-semibold text-gray-900">{lowerIndex}</span>-
       <span className="px-1 font-semibold text-gray-900">{upperIndex}</span>
-      {t('table.of')}
+      {'of'}
       <span className="px-1 font-semibold text-gray-900">{total}</span>
     </span>
   ));

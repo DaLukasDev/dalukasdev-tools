@@ -12,6 +12,8 @@
     "prettier:check": "prettier --check \"**/*.ts*\""
   },
   "dependencies": {
+    "@dalukasdev/table": "*",
+    "@dalukasdev/tailwind": "*",
     "@dalukasdev/ui": "*",
     "next": "latest",
     "react": "^18.2.0",
@@ -21,7 +23,11 @@
     "@types/node": "^17.0.12",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
+    "autoprefixer": "^10.4.14",
     "eslint-config-custom": "*",
+    "mini-svg-data-uri": "^1.4.4",
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.2",
     "tsconfig": "*",
     "typescript": "^5.0.4"
   }

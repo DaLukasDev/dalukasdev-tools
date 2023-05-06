@@ -1,7 +1,7 @@
 import type { TableProps } from './@types';
 import { TableFooter, TableHeader, TableRows } from './components';
 
-export const Table = <T extends { id: number }, K extends keyof T>({
+export const Table = <T extends { id: string }, K extends keyof T>({
   data = [],
   columns,
   onNextPage,

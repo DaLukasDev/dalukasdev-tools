@@ -6,6 +6,11 @@
     "noEmit": true,
     "lib": ["esnext", "dom"]
   },
-  "include": ["src/", ".eslintrc.js", "../../@types/**/*.d.ts"],
+  "include": [
+    "src/",
+    ".eslintrc.js",
+    "../../@types/**/*.d.ts",
+    "tailwind.config.ts"
+  ],
   "exclude": ["node_modules", ".turbo", "coverage", "dist", "src/**/*.test.ts"]
 }

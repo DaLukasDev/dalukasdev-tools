@@ -12,14 +12,14 @@ export type PaginatorInfo = {
 };
 
 export interface ColumnDefinitionType<T> {
-  key: keyof T | 'actions' | 'actionsAdmin';
+  key: keyof T | 'actions';
   subKey?: string;
   prefix?: string;
   header: string;
-  filterable?: boolean;
+  searchable?: boolean;
+  searchKey?: keyof T | string;
   actions?: TableActionsProps<T>[];
-  actionsAdmin?: TableActionsProps<T>[];
-  date?: boolean;
+  isDate?: boolean;
   dateFormat?: string;
   className?: string;
 }
@@ -40,6 +40,8 @@ export interface TableProps<T, K extends keyof T> {
   onMultiSelectChange?: (selectedItem: string, added: boolean) => void;
   disableSearch?: boolean;
   isLoading?: boolean;
+  styles?: TableStyles;
+  locale?: localeConfig;
 }
 
 export interface TableHeaderProps<T, K extends keyof T> {
@@ -48,6 +50,8 @@ export interface TableHeaderProps<T, K extends keyof T> {
   onSearchChange: (searchTerm: string, column: K | string) => void;
   checkbox?: boolean;
   disableSearch?: boolean;
+  styles: TableStyles;
+  locale: localeConfig;
 }
 
 export interface TableRowsProps<T> {
@@ -57,6 +61,8 @@ export interface TableRowsProps<T> {
   multiSelect?: string[];
   onMultiSelectChange?: (selectedItem: string, added: boolean) => void;
   isLoading?: boolean;
+  styles: TableStyles;
+  locale: localeConfig;
 }
 
 export interface TableFooterProps {
@@ -66,6 +72,8 @@ export interface TableFooterProps {
   onPreviousPage: () => void;
   onPageSizeChange: (pageSize: number) => void;
   paginatorProps: PaginatorInfo;
+  styles: TableStyles;
+  locale: localeConfig;
 }
 
 export interface TableActionsProps<T> {
@@ -74,19 +82,42 @@ export interface TableActionsProps<T> {
   onClick: (rowData: T) => void;
 }
 
-export type SearchType<T> = Partial<{ [x in keyof T]: string }>;
+export type SearchType<T> = Partial<{ [x in keyof T | string]: string }>;
 export type ColumnType<T> = Array<ColumnDefinitionType<T>>;
 
 export interface TableReturn<T> {
   page: number;
   pageSize: number;
-  onSearchChangedHandler: (value: string, key: keyof T | string) => void;
   multiSelect: string[];
   tableCard: RefObject<HTMLDivElement>;
   searchTerm: SearchType<T>;
+  onSearchChangedHandler: (key: keyof T | string, value: string) => void;
   nextPageHandler: (maxPage: number) => void;
   prevPageHandler: () => void;
   pageSizeChangeHandler: (size: number) => void;
   onMultiSelectChange?: (value: string, checked: boolean) => void;
   resetTable: () => void;
 }
+
+export type localeConfig = {
+  searchPlaceholder: string;
+  noData: string;
+  noResults: string;
+  loading: string;
+  noValue: string;
+  all: string;
+  rowCount: string;
+  of: string;
+};
+export type TableStyles = {
+  tableHeaderClasses: string;
+  searchHeaderClasses: string;
+  searchInputClasses: string;
+  tableRowClasses: string;
+  tableRowIsOddClasses: string;
+  tableCellStyles: string;
+  noDataStyles: string;
+  checkboxStyles: string;
+  tableFooterStyles: string;
+  tableStyles: string;
+};

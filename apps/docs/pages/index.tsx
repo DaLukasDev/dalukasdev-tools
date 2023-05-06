@@ -7,24 +7,35 @@ export default function Docs() {
       name: 'John Doe',
       age: 25,
       gender: 'male',
+      xd: 'xd',
     },
     {
       id: '2',
       name: 'John Doe',
       age: 25,
       gender: 'male',
+      xd: 'xd',
     },
     {
       id: '3',
       name: 'John Doe',
       age: 25,
       gender: 'male',
+      xd: 'xd',
     },
     {
       id: '4',
       name: 'John Doe',
       age: 25,
       gender: 'male',
+      xd: 'xd',
+    },
+    {
+      id: '5',
+      name: 'John Doe',
+      age: 25,
+      gender: 'male',
+      xd: 'xd',
     },
   ];
 
@@ -48,14 +59,26 @@ export default function Docs() {
     {
       key: 'name',
       header: "User's name",
+      searchable: true,
+      searchKey: 'name',
     },
     {
       key: 'age',
       header: 'age',
+      searchable: true,
+      searchKey: 'age',
     },
     {
       key: 'gender',
       header: 'gender',
+      searchable: true,
+      searchKey: 'genderrrr',
+    },
+    {
+      key: 'xd',
+      header: 'xd',
+      searchable: true,
+      searchKey: 'genderrrr',
     },
   ];
 

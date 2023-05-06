@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import type { SearchType, TableReturn } from '../@types';
 
 export function useTable<T extends object>(): TableReturn<T> {
@@ -26,19 +26,11 @@ export function useTable<T extends object>(): TableReturn<T> {
       ? setMultiSelect((prev) => [...prev, value])
       : setMultiSelect((prev) => prev.filter((item) => item !== value));
 
-  const onSearchChangedHandler = (value: string, key: keyof T | string) => {
-    if (key.toString().includes('.')) {
-      const [parent, child] = key.toString().split('.');
-      const newKey = `${parent}${child.charAt(0).toUpperCase()}${child.slice(
-        1
-      )}`;
-      SetSearchTerm((prev) => ({
-        ...prev,
-        [newKey]: value,
-      }));
-    } else {
-      SetSearchTerm((prev) => ({ ...prev, [key]: value }));
-    }
+  const onSearchChangedHandler = (key: keyof T | string, value: string) => {
+    SetSearchTerm((prev) => ({
+      ...prev,
+      [key]: value,
+    }));
     SetPage(1);
   };
 
@@ -48,6 +40,9 @@ export function useTable<T extends object>(): TableReturn<T> {
     SetSearchTerm({});
     setMultiSelect([]);
   }, []);
+
+  useEffect(() => console.log(searchTerm), [searchTerm]);
+
   return {
     page,
     onSearchChangedHandler,

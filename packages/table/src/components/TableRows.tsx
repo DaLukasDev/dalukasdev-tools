@@ -2,8 +2,8 @@ import { Loader } from '@dalukasdev/ui';
 import { isOdd } from '@dalukasdev/utils';
 import dayjs from 'dayjs';
 import formatter from 'dayjs/plugin/customParseFormat';
-
 import { TableActionsProps, TableRowsProps } from '../@types';
+
 export const TableRows = <T extends { [x: string]: any }>({
   data = [],
   columns,
@@ -11,6 +11,8 @@ export const TableRows = <T extends { [x: string]: any }>({
   onMultiSelectChange,
   multiSelect,
   isLoading,
+  styles,
+  locale,
 }: TableRowsProps<T>): JSX.Element => {
   dayjs.extend(formatter);
 
@@ -53,8 +55,8 @@ export const TableRows = <T extends { [x: string]: any }>({
             data.map((row, index) => (
               <tr
                 key={`row-${index}`}
-                className={`t-row ${
-                  isOdd(index) ? 'bg-grey-100 bg-opacity-40' : ''
+                className={`${styles.tableRowClasses} ${
+                  isOdd(index) ? styles.tableRowIsOddClasses : ''
                 }`}
               >
                 {checkbox && row.id && (
@@ -71,7 +73,7 @@ export const TableRows = <T extends { [x: string]: any }>({
                           event.target.checked
                         )
                       }
-                      className="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600"
+                      className={styles.checkboxStyles}
                     />
                   </td>
                 )}
@@ -79,16 +81,14 @@ export const TableRows = <T extends { [x: string]: any }>({
                   return (
                     <td
                       key={`cell-${index2}`}
-                      className={`t-row ${
-                        isOdd(index) ? 'bg-grey-100 bg-opacity-40' : ''
+                      className={`${styles.tableCellStyles} ${
+                        isOdd(index) ? styles.tableRowIsOddClasses : ''
                       }`}
                     >
                       {!column.key.toString().includes('actions') ? (
                         <div
-                          className={`text-pale text-sm font-medium leading-5  ${
-                            column.className
-                              ? column.className
-                              : 'text-gray-900'
+                          className={`${styles.tableCellStyles} ${
+                            column.className ? column.className : ''
                           }`}
                         >
                           {row[column.key] ? (
@@ -96,13 +96,14 @@ export const TableRows = <T extends { [x: string]: any }>({
                               <>
                                 {(column.prefix ?? '') +
                                   ' ' +
-                                  row[column.key][column.subKey] ?? 'no value'}
+                                  row[column.key][column.subKey] ??
+                                  locale.noValue}
                               </>
                             ) : (
                               <>
                                 {(column.prefix ?? '') +
                                   ' ' +
-                                  (column.date
+                                  (column.isDate
                                     ? dayjs(row[column.key]).format(
                                         column.dateFormat ?? 'DD/MM/YYYY'
                                       )
@@ -110,15 +111,11 @@ export const TableRows = <T extends { [x: string]: any }>({
                               </>
                             )
                           ) : (
-                            'no value'
+                            locale.noValue
                           )}
                         </div>
                       ) : (
-                        <>
-                          {column.actions && ActionButtons(column.actions, row)}
-                          {column.actionsAdmin &&
-                            ActionButtons(column.actionsAdmin, row)}
-                        </>
+                        column.actions && ActionButtons(column.actions, row)
                       )}
                     </td>
                   );
@@ -128,12 +125,10 @@ export const TableRows = <T extends { [x: string]: any }>({
           {!data.length && (
             <tr>
               <td
-                className="t-row"
+                className={styles.tableRowClasses}
                 colSpan={checkbox ? columns.length + 1 : columns.length}
               >
-                <div className="text-pale text-center text-sm font-medium leading-5 text-gray-900">
-                  {'no data'}
-                </div>
+                <div className={styles.noDataStyles}>{locale.noData}</div>
               </td>
             </tr>
           )}

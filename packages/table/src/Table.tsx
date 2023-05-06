@@ -1,5 +1,7 @@
-import type { TableProps } from './@types';
+import type { PaginatorInfo, TableProps } from './@types';
 import { TableFooter, TableHeader, TableRows } from './components';
+import { defaultLocale } from './config';
+import { defaultStyles } from './config/styles';
 
 export const Table = <T extends { id: string }, K extends keyof T>({
   data = [],
@@ -17,10 +19,15 @@ export const Table = <T extends { id: string }, K extends keyof T>({
   paginatorProps,
   disableSearch,
   isLoading,
-}: TableProps<T, K>) => (
-  <div className="mt-4 flex flex-col">
-    <div className="-my-2 overflow-x-auto py-2">
-      <div className="inline-block min-w-full overflow-hidden rounded-lg align-middle sm:rounded-lg">
+  locale: CLocale,
+  styles: CStyles,
+}: TableProps<T, K>) => {
+  const styles = CStyles ?? defaultStyles;
+  const locale = CLocale ?? defaultLocale;
+
+  return (
+    <div className={defaultStyles.tableStyles}>
+      <div className="overflow-x-auto">
         <table className="min-w-full table-auto">
           <TableHeader
             onSearchChange={onSearchChange}
@@ -28,6 +35,8 @@ export const Table = <T extends { id: string }, K extends keyof T>({
             columns={columns}
             checkbox={checkbox}
             disableSearch={disableSearch}
+            locale={locale}
+            styles={styles}
           />
           <TableRows
             data={data}
@@ -36,17 +45,21 @@ export const Table = <T extends { id: string }, K extends keyof T>({
             multiSelect={multiSelect}
             onMultiSelectChange={onMultiSelectChange}
             isLoading={isLoading}
+            locale={locale}
+            styles={styles}
           />
         </table>
       </div>
+      <TableFooter
+        paginatorProps={paginatorProps ?? ({} as PaginatorInfo)}
+        currentPageSize={currentPageSize}
+        currentPage={currentPage}
+        onNextPage={onNextPage}
+        onPreviousPage={onPreviousPage}
+        onPageSizeChange={onPageSizeChange}
+        locale={locale}
+        styles={styles}
+      />
     </div>
-    <TableFooter
-      paginatorProps={paginatorProps ?? ({} as any)}
-      currentPageSize={currentPageSize}
-      currentPage={currentPage}
-      onNextPage={onNextPage}
-      onPreviousPage={onPreviousPage}
-      onPageSizeChange={onPageSizeChange}
-    />
-  </div>
-);
+  );
+};

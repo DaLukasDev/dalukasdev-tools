@@ -9,7 +9,7 @@ type SelectProps = JSX.IntrinsicElements['select'] & {
 export const Select: FC<SelectProps> = ({ options, className, ...props }) => {
   return (
     <select
-      className={`block w-full min-w-fit rounded-lg border border-gray-300 bg-white p-2.5 pr-10 text-sm text-gray-900 ${className}`}
+      className={`block w-full min-w-fit rounded-lg border border-gray-300 bg-white p-2.5  text-sm text-gray-900 ${className}`}
       {...props}
     >
       {options.map((option) => (

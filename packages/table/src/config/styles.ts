@@ -2,7 +2,7 @@ import { TableStyles } from '../@types';
 
 export const defaultStyles: TableStyles = {
   tableStyles:
-    'mt-4 flex flex-col rounded-xl border bg-zinc-100 p-2 shadow-2xl dark:bg-zinc-900 dark:border-zinc-600',
+    'mt-4 flex flex-col rounded-xl border bg-zinc-100  shadow-2xl dark:bg-zinc-900 dark:border-zinc-600',
   tableHeaderClasses:
     'break-keep border-b border-gray-300 bg-zinc-100 px-6 py-3 first:text-left text-center  text-xs font-medium uppercase leading-4 tracking-wider text-gray-600 dark:border-zinc-600 dark:bg-zinc-900 dark:text-white first:rounded-tl-lg last:rounded-tr-lg',
   searchHeaderClasses:

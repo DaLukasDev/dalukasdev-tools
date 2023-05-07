@@ -45,7 +45,7 @@ export const TableRows = <T extends { [x: string]: any }>({
     <tbody>
       {isLoading ? (
         <tr>
-          <td colSpan={100} className="pt-3">
+          <td colSpan={100} className="p-3">
             <Loader isFullscreen={false} />
           </td>
         </tr>

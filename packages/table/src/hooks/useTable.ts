@@ -1,9 +1,11 @@
 import { useCallback, useRef, useState } from 'react';
 import type { SearchType, TableReturn } from '../@types';
 
-export function useTable<T extends object>(): TableReturn<T> {
+export function useTable<T extends object>(
+  defaultPageSize = 10
+): TableReturn<T> {
   const [page, SetPage] = useState(1);
-  const [pageSize, SetPageSize] = useState(5);
+  const [pageSize, SetPageSize] = useState(defaultPageSize);
   const [searchTerm, SetSearchTerm] = useState<SearchType<T>>({});
   const [multiSelect, setMultiSelect] = useState<string[]>([]);
   const tableCard = useRef<HTMLDivElement>(null);

@@ -21,7 +21,7 @@ export const Loader: FC<LoaderProps> = ({
     <div className="m-auto">
       <div role="status">
         <svg
-          className={`inline ${width} ${height} fill-primary-800 animate-spin text-gray-200`}
+          className={`inline ${width} ${height} animate-spin fill-emerald-400 text-black dark:fill-emerald-600 dark:text-gray-200`}
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

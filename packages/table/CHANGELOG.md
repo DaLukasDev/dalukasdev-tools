@@ -1,5 +1,11 @@
 # @dalukasdev/table
 
+## 0.0.15
+
+### Patch Changes
+
+- 55eb5f2: add aux click to table
+
 ## 0.0.14
 
 ### Patch Changes

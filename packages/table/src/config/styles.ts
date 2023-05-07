@@ -16,7 +16,8 @@ export const defaultStyles: TableStyles = {
     'px-6 py-3 whitespace-nowrap text-sm text-gray-900 dark:text-white',
   noDataStyles: 'text-center text-gray-500 dark:text-gray-400 py-4',
   checkboxStyles: 'h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600',
-  tableFooterStyles: '',
+  tableFooterStyles:
+    'mt-2 flex flex-col items-center space-x-2 rounded-lg border pb-2 pr-2 sm:flex-row sm:justify-end',
   tableFooterButtonStyles:
     'inline-flex items-center first:rounded-l-md last:rounded-r-md bg-zinc-700 px-4 py-2 text-sm font-medium  text-white hover:bg-zinc-500 hover:text-gray-200 focus:z-10  focus:ring-2 disabled:bg-gray-700 dark:bg-emerald-600 dark:text-white dark:hover:bg-emerald-700 dark:hover:text-white  dark:focus:text-white disabled:dark:bg-gray-700',
 };

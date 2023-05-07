@@ -130,7 +130,7 @@ export const TableFooter: FC<TableFooterProps> = ({
   );
 
   return (
-    <div className="mt-2 flex flex-col items-center space-x-2 rounded-lg border pb-2 pr-2 sm:flex-row sm:justify-end">
+    <div className={styles.tableFooterStyles}>
       <RowsPerPage
         currentPageSize={currentPageSize}
         total={total}

@@ -8,7 +8,7 @@
   },
   "include": [
     "src/",
-    ".eslintrc.js",
+    ".eslintrc.cjs",
     "../../@types/**/*.d.ts",
     "tailwind.config.ts"
   ],

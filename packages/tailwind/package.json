@@ -4,7 +4,7 @@
   "types": "src/index.ts",
   "license": "MIT",
   "sideEffects": false,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "scripts": {
     "clean": "rm -rf node_modules .turbo",

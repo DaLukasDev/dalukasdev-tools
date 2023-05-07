@@ -1,14 +1,14 @@
 import type { RefObject } from 'react';
 
 export type PaginatorInfo = {
-  count: number;
-  currentPage: number;
-  firstItem?: number;
   hasMorePages: boolean;
-  lastItem?: number;
+  currentPage: number;
   lastPage: number;
-  perPage: number;
+  count: number;
   total: number;
+  perPage: number;
+  firstItem?: number | null;
+  lastItem?: number | null;
 };
 
 export interface ColumnDefinitionType<T> {

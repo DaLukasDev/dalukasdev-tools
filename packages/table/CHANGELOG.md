@@ -1,5 +1,17 @@
 # @dalukasdev/table
 
+## 0.0.14
+
+### Patch Changes
+
+- 2ed8043: Removed is odd dep from utils as we can use `odd` from tailwin itself
+  Removed odd row styles as they can be included in row styles
+  Updated default styles
+
+  DEV:
+
+  - added watch scripts
+
 ## 0.0.13
 
 ### Patch Changes

@@ -10,7 +10,7 @@ export const defaultStyles: TableStyles = {
   searchInputClasses:
     'rounded-lg border border-zinc-500 bg-zinc-50 p-1.5 pl-3 text-sm text-gray-900  dark:border-zinc-600 dark:bg-zinc-800 dark:text-white dark:placeholder-gray-400 sm:w-full min-w-[200px]',
   tableRowClasses:
-    'whitespace-nowrap border-b border-gray-300 bg-zinc-100 text-center  text-black dark:border-zinc-600 dark:bg-zinc-900 dark:text-slate-300 last:border-b-0',
+    'whitespace-nowrap border-b border-gray-300 bg-zinc-100 text-center text-black dark:border-zinc-600 dark:bg-zinc-900 dark:text-slate-300 last:border-b-0',
   tableRowIsOddClasses: 'bg-grey-100 bg-opacity-40',
   tableCellStyles:
     'px-6 py-3 whitespace-nowrap text-sm text-gray-900 dark:text-white',
@@ -20,7 +20,8 @@ export const defaultStyles: TableStyles = {
     'mt-2 flex flex-col items-center space-x-2 rounded-lg border pb-2 pr-2 sm:flex-row sm:justify-end',
   tableFooterButtonStyles:
     'inline-flex items-center first:rounded-l-md last:rounded-r-md bg-zinc-700 px-4 py-2 text-sm font-medium  text-white hover:bg-zinc-500 hover:text-gray-200 focus:z-10  focus:ring-2 disabled:bg-gray-700 dark:bg-emerald-600 dark:text-white dark:hover:bg-emerald-700 dark:hover:text-white  dark:focus:text-white disabled:dark:bg-gray-700',
-  tableFooterTextStyles: 'px-1 font-semibold text-gray-900 ddark:text-white',
+  tableFooterTextStyles: 'px-1 font-semibold text-gray-900 dark:text-white',
+  tableFooterRowsPerPageStyles: 'whitespace-nowrap text-sm text-gray-700',
 };
 
 export const createCustomStyles = (config: Partial<TableStyles>) => {

@@ -122,4 +122,5 @@ export type TableStyles = {
   tableFooterTextStyles: string;
   tableFooterButtonStyles: string;
   tableStyles: string;
+  tableFooterRowsPerPageStyles: string;
 };

@@ -87,11 +87,10 @@ const RowsPerPage: FC<RowsPerPageProps> = ({
   onPageSizeChange,
   total,
   locale,
+  styles: { tableFooterRowsPerPageStyles },
 }) => (
   <div className="mt-2 inline-flex items-center space-x-2">
-    <span className="whitespace-nowrap text-sm text-gray-700">
-      {locale.rowCount}
-    </span>
+    <span className={tableFooterRowsPerPageStyles}>{locale.rowCount}</span>
     <Select
       value={currentPageSize}
       options={[

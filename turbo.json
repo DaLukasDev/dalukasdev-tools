@@ -8,6 +8,9 @@
     },
     "lint": {},
     "tsc": {},
+    "watch": {
+      "outputs": ["dist/**"]
+    },
     "clean": {
       "outputs": []
     },

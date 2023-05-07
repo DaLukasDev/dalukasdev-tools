@@ -1,5 +1,4 @@
 import { Loader } from '@dalukasdev/ui';
-import { isOdd } from '@dalukasdev/utils';
 import dayjs from 'dayjs';
 import formatter from 'dayjs/plugin/customParseFormat.js';
 import { TableActionsProps, TableRowsProps } from '../@types';
@@ -53,12 +52,7 @@ export const TableRows = <T extends { [x: string]: any }>({
         <>
           {data.length > 0 &&
             data.map((row, index) => (
-              <tr
-                key={`row-${index}`}
-                className={`${styles.tableRowClasses} ${
-                  isOdd(index) ? styles.tableRowIsOddClasses : ''
-                }`}
-              >
+              <tr key={`row-${index}`} className={`${styles.tableRowClasses}`}>
                 {checkbox && row.id && (
                   <td>
                     <input
@@ -82,38 +76,32 @@ export const TableRows = <T extends { [x: string]: any }>({
                     <td
                       key={`cell-${index2}`}
                       className={`${styles.tableCellStyles} ${
-                        isOdd(index) ? styles.tableRowIsOddClasses : ''
+                        column.className ? column.className : ''
                       }`}
                     >
                       {!column.key.toString().includes('actions') ? (
-                        <div
-                          className={`${styles.tableCellStyles} ${
-                            column.className ? column.className : ''
-                          }`}
-                        >
-                          {row[column.key] ? (
-                            column.subKey ? (
-                              <>
-                                {(column.prefix ?? '') +
-                                  ' ' +
-                                  row[column.key][column.subKey] ??
-                                  locale.noValue}
-                              </>
-                            ) : (
-                              <>
-                                {(column.prefix ?? '') +
-                                  ' ' +
-                                  (column.isDate
-                                    ? dayjs(row[column.key]).format(
-                                        column.dateFormat ?? 'DD/MM/YYYY'
-                                      )
-                                    : row[column.key])}
-                              </>
-                            )
+                        row[column.key] ? (
+                          column.subKey ? (
+                            <>
+                              {(column.prefix ?? '') +
+                                ' ' +
+                                row[column.key][column.subKey] ??
+                                locale.noValue}
+                            </>
                           ) : (
-                            locale.noValue
-                          )}
-                        </div>
+                            <>
+                              {(column.prefix ?? '') +
+                                ' ' +
+                                (column.isDate
+                                  ? dayjs(row[column.key]).format(
+                                      column.dateFormat ?? 'DD/MM/YYYY'
+                                    )
+                                  : row[column.key])}
+                            </>
+                          )
+                        ) : (
+                          locale.noValue
+                        )
                       ) : (
                         column.actions && ActionButtons(column.actions, row)
                       )}

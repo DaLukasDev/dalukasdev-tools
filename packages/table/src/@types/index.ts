@@ -114,7 +114,6 @@ export type TableStyles = {
   searchHeaderClasses: string;
   searchInputClasses: string;
   tableRowClasses: string;
-  tableRowIsOddClasses: string;
   tableCellStyles: string;
   noDataStyles: string;
   checkboxStyles: string;

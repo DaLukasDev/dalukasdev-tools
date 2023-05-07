@@ -10,6 +10,7 @@
     "lint": "eslint ./src --ext .ts,.tsx",
     "tsc": "tsc --noEmit",
     "build": "tsup src/index.ts --format cjs,esm --dts",
+    "watch": "tsup src/index.ts --format cjs,esm --dts --watch",
     "clean": "rm -rf node_modules .turbo",
     "prettier:fix": "prettier --write \"src/**/*.ts*\"",
     "prettier:check": "prettier --check \"src/**/*.ts*\""

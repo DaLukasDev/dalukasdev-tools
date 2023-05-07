@@ -9,6 +9,7 @@
     "lint": "eslint \"**/*.ts*\"",
     "tsc": "tsc --noEmit",
     "build": "tsup src/index.ts --format cjs,esm --dts --external react",
+    "watch": "tsup src/index.ts --format cjs,esm --dts --external react --watch",
     "clean": "rm -rf node_modules .turbo",
     "prettier:fix": "prettier --write \"**/*.ts*\"",
     "prettier:check": "prettier --check \"**/*.ts*\""

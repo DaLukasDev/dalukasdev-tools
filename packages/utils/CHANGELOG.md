@@ -1,5 +1,11 @@
 # @dalukasdev/utils
 
+## 0.0.9
+
+### Patch Changes
+
+- 128e833: test for esm module
+
 ## 0.0.8
 
 ### Patch Changes

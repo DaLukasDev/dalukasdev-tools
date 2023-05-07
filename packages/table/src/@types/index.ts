@@ -80,6 +80,7 @@ export interface TableActionsProps<T> {
   icon: JSX.Element;
   styles: string;
   onClick: (rowData: T) => void;
+  onAuxClick: (rowData: T) => void;
 }
 
 export type SearchType<T> = Partial<{ [x in keyof T | string]: string }>;

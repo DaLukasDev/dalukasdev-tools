@@ -1,5 +1,11 @@
 # @dalukasdev/ui
 
+## 0.0.8
+
+### Patch Changes
+
+- 097179d: Fixed PaginatorProps typing
+
 ## 0.0.7
 
 ### Patch Changes

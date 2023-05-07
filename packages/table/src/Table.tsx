@@ -26,7 +26,7 @@ export const Table = <T extends { id: string }, K extends keyof T>({
   const locale = CLocale ?? defaultLocale;
 
   return (
-    <div className={defaultStyles.tableStyles}>
+    <div className={styles.tableStyles}>
       <div className="overflow-x-auto">
         <table className="min-w-full table-auto">
           <TableHeader

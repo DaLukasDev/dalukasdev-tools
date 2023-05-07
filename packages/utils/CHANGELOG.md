@@ -1,5 +1,11 @@
 # @dalukasdev/utils
 
+## 0.0.12
+
+### Patch Changes
+
+- ccc5187: add footer rows per page to styles config
+
 ## 0.0.11
 
 ### Patch Changes

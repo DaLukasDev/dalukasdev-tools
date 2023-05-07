@@ -14,13 +14,13 @@
     "prettier:check": "prettier --check \"src/**/*.ts*\""
   },
   "devDependencies": {
-    "@dalukasdev/ui": "*",
-    "@dalukasdev/utils": "*",
+    "@dalukasdev/ui": "workspace:*",
+    "@dalukasdev/utils": "workspace:*",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
-    "eslint": "^7.32.0",
-    "eslint-config-custom": "*",
-    "tsconfig": "*",
+    "eslint": "^8.40.0",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
     "tsup": "^6.7.0",
     "typescript": "^5.0.4"
   },

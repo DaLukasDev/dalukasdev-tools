@@ -17,6 +17,8 @@ export const defaultStyles: TableStyles = {
   noDataStyles: 'text-center text-gray-500 dark:text-gray-400 py-4',
   checkboxStyles: 'h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600',
   tableFooterStyles: '',
+  tableFooterButtonStyles:
+    'inline-flex items-center first:rounded-l-md last:rounded-r-md bg-zinc-700 px-4 py-2 text-sm font-medium  text-white hover:bg-zinc-500 hover:text-gray-200 focus:z-10  focus:ring-2 disabled:bg-gray-700 dark:bg-emerald-600 dark:text-white dark:hover:bg-emerald-700 dark:hover:text-white  dark:focus:text-white disabled:dark:bg-gray-700',
 };
 
 export const createCustomStyles = (config: Partial<TableStyles>) => {

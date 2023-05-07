@@ -4,7 +4,7 @@ export const defaultStyles: TableStyles = {
   tableStyles:
     'mt-4 flex flex-col rounded-xl border bg-zinc-100 p-2 shadow-2xl dark:bg-zinc-900 dark:border-zinc-600',
   tableHeaderClasses:
-    'break-keep border-b border-gray-300 bg-zinc-100 px-6 py-3 text-center text-xs font-medium uppercase leading-4 tracking-wider text-gray-600 dark:border-zinc-600 dark:bg-zinc-900 dark:text-white first:rounded-tl-lg last:rounded-tr-lg',
+    'break-keep border-b border-gray-300 bg-zinc-100 px-6 py-3 first:text-left text-center  text-xs font-medium uppercase leading-4 tracking-wider text-gray-600 dark:border-zinc-600 dark:bg-zinc-900 dark:text-white first:rounded-tl-lg last:rounded-tr-lg',
   searchHeaderClasses:
     'break-keep border-b border-gray-300 bg-zinc-100 px-6 py-3 text-center text-xs font-medium uppercase leading-4 tracking-wider text-gray-600 dark:border-zinc-600 dark:bg-zinc-900 dark:text-white ',
   searchInputClasses:
@@ -12,7 +12,7 @@ export const defaultStyles: TableStyles = {
   tableRowClasses:
     'whitespace-nowrap border-b border-gray-300 bg-zinc-100 text-black dark:border-zinc-600 dark:bg-zinc-900 dark:text-slate-300 last:border-b-0 odd:bg-gray-100 dark:odd:bg-zinc-700 odd:bg-opacity-40 ',
   tableCellStyles:
-    'px-6 first:px-7 py-6 whitespace-nowrap text-sm text-gray-900 dark:text-white first:text-left text-center',
+    'px-6 py-6 whitespace-nowrap text-sm text-gray-900 dark:text-white first:text-left text-center',
   noDataStyles: 'text-center text-gray-500 dark:text-gray-400 py-4',
   checkboxStyles: 'h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600',
   tableFooterStyles:

@@ -1,5 +1,13 @@
 # @dalukasdev/ui
 
+## 0.0.5
+
+### Patch Changes
+
+- 1adaa7d: access public
+- Updated dependencies [1adaa7d]
+  - @dalukasdev/tailwind@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes

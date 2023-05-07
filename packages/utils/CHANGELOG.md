@@ -1,5 +1,11 @@
 # @dalukasdev/utils
 
+## 0.0.5
+
+### Patch Changes
+
+- 1adaa7d: access public
+
 ## 0.0.4
 
 ### Patch Changes

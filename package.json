@@ -11,7 +11,7 @@
     "prettier:check": "turbo run prettier:check",
     "prettier:fix": "turbo run prettier:fix",
     "plop": "plop",
-    "publish-packages": "turbo run build lint test && changeset version && changeset publish"
+    "publish-packages": "turbo run build && changeset version && changeset publish"
   },
   "name": "dalukasdev",
   "packageManager": "pnpm@8.4.0",

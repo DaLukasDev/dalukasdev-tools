@@ -8,7 +8,7 @@
   "scripts": {
     "lint": "eslint \"**/*.ts*\"",
     "tsc": "tsc --noEmit",
-    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "build": "tsup src/index.ts --format cjs,esm --dts --external react",
     "clean": "rm -rf node_modules .turbo",
     "prettier:fix": "prettier --write \"**/*.ts*\"",
     "prettier:check": "prettier --check \"**/*.ts*\""

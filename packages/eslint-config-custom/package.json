@@ -4,7 +4,6 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint ./src --ext .ts,.tsx",
     "clean": "rm -rf node_modules .turbo",
     "prettier:fix": "prettier --write \"**/*.js*\"",
     "prettier:check": "prettier --check \"**/*.js*\""

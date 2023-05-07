@@ -8,6 +8,7 @@
   "sideEffects": false,
   "scripts": {
     "lint": "eslint ./src --ext .ts,.tsx",
+    "tsc": "tsc --noEmit",
     "clean": "rm -rf node_modules .turbo",
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "prettier:fix": "prettier --write \"src/**/*.ts*\"",
@@ -16,6 +17,7 @@
   "devDependencies": {
     "@dalukasdev/ui": "workspace:*",
     "@dalukasdev/utils": "workspace:*",
+    "@dalukasdev/tailwind": "workspace:*",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
     "eslint": "^8.40.0",

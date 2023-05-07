@@ -4,6 +4,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
+    "tsc": "turbo run tsc",
     "lint:fix": "turbo run lint -- --fix ",
     "mp:check": "manypkg check |& grep -v '@workspace'",
     "clean": "turbo run clean && rm -rf ./node_modules ./pnpm-lock.yaml",

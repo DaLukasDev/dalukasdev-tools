@@ -6,7 +6,6 @@
   "license": "MIT",
   "sideEffects": false,
   "scripts": {
-    "lint": "eslint ./src --ext .ts,.tsx",
     "clean": "rm -rf node_modules .turbo",
     "prettier:fix": "prettier --write \"src/**/*.ts*\"",
     "prettier:check": "prettier --check \"src/**/*.ts*\""

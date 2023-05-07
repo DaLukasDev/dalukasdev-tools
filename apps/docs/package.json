@@ -6,7 +6,6 @@
     "dev": "next dev --port 3001",
     "buildd": "next build",
     "start": "next start",
-    "lint": "next lint",
     "clean": "rm -rf node_modules .turbo",
     "prettier:fix": "prettier --write \"**/*.ts*\"",
     "prettier:check": "prettier --check \"**/*.ts*\""

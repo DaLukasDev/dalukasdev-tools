@@ -1,7 +1,7 @@
 import { Loader } from '@dalukasdev/ui';
 import { isOdd } from '@dalukasdev/utils';
 import dayjs from 'dayjs';
-import formatter from 'dayjs/plugin/customParseFormat';
+import formatter from 'dayjs/plugin/customParseFormat.js';
 import { TableActionsProps, TableRowsProps } from '../@types';
 
 export const TableRows = <T extends { [x: string]: any }>({

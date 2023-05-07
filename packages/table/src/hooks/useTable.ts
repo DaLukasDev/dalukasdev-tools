@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import type { SearchType, TableReturn } from '../@types';
 
 export function useTable<T extends object>(): TableReturn<T> {
@@ -40,8 +40,6 @@ export function useTable<T extends object>(): TableReturn<T> {
     SetSearchTerm({});
     setMultiSelect([]);
   }, []);
-
-  useEffect(() => console.log(searchTerm), [searchTerm]);
 
   return {
     page,

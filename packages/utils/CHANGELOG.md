@@ -1,5 +1,11 @@
 # @dalukasdev/utils
 
+## 0.0.17
+
+### Patch Changes
+
+- 9c33ba9: updated table defautl styles
+
 ## 0.0.16
 
 ### Patch Changes

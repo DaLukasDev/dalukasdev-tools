@@ -1,5 +1,11 @@
 # @dalukasdev/table
 
+## 0.0.10
+
+### Patch Changes
+
+- 2ef067e: fixed default styles on table + added button styles
+
 ## 0.0.9
 
 ### Patch Changes

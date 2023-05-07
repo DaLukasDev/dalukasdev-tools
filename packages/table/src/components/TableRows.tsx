@@ -23,7 +23,7 @@ export const TableRows = <T extends { [x: string]: any }>({
             key={`action-${index}`}
             className={action.styles}
             onClick={() => action.onClick(rowData)}
-            onAuxClick={() => action.onAuxClick(rowData)}
+            onAuxClick={() => action.onAuxClick && action.onAuxClick(rowData)}
           >
             {action.icon}
           </button>

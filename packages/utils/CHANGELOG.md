@@ -1,5 +1,11 @@
 # @dalukasdev/utils
 
+## 0.0.7
+
+### Patch Changes
+
+- 58f18e8: incorrect esm export
+
 ## 0.0.6
 
 ### Patch Changes

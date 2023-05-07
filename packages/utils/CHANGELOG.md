@@ -1,5 +1,12 @@
 # @dalukasdev/utils
 
+## 0.0.18
+
+### Patch Changes
+
+- 3b5413c: fixes inset and header first left aligned
+- 3d24bbf: fixes inset on table
+
 ## 0.0.17
 
 ### Patch Changes

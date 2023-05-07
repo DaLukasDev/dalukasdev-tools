@@ -119,6 +119,7 @@ export type TableStyles = {
   noDataStyles: string;
   checkboxStyles: string;
   tableFooterStyles: string;
+  tableFooterTextStyles: string;
   tableFooterButtonStyles: string;
   tableStyles: string;
 };

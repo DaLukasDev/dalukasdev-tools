@@ -20,6 +20,7 @@ export const defaultStyles: TableStyles = {
     'mt-2 flex flex-col items-center space-x-2 rounded-lg border pb-2 pr-2 sm:flex-row sm:justify-end',
   tableFooterButtonStyles:
     'inline-flex items-center first:rounded-l-md last:rounded-r-md bg-zinc-700 px-4 py-2 text-sm font-medium  text-white hover:bg-zinc-500 hover:text-gray-200 focus:z-10  focus:ring-2 disabled:bg-gray-700 dark:bg-emerald-600 dark:text-white dark:hover:bg-emerald-700 dark:hover:text-white  dark:focus:text-white disabled:dark:bg-gray-700',
+  tableFooterTextStyles: 'px-1 font-semibold text-gray-900 ddark:text-white',
 };
 
 export const createCustomStyles = (config: Partial<TableStyles>) => {

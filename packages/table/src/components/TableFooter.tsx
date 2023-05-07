@@ -15,12 +15,13 @@ const Indexes: FC<IndexesProps> = ({
   total,
   upperIndex,
   locale,
+  styles: { tableFooterTextStyles },
 }) => (
   <span className="mt-2 text-sm text-gray-700 dark:text-gray-400">
-    <span className="px-1 font-semibold text-gray-900">{lowerIndex}</span>-
-    <span className="px-1 font-semibold text-gray-900">{upperIndex}</span>
+    <span className={tableFooterTextStyles}>{lowerIndex}</span>-
+    <span className={tableFooterTextStyles}>{upperIndex}</span>
     {locale.of}
-    <span className="px-1 font-semibold text-gray-900">{total}</span>
+    <span className={tableFooterTextStyles}>{total}</span>
   </span>
 );
 

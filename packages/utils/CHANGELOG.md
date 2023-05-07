@@ -1,5 +1,11 @@
 # @dalukasdev/utils
 
+## 0.0.16
+
+### Patch Changes
+
+- f37305e: onAuxClick should be optional
+
 ## 0.0.15
 
 ### Patch Changes

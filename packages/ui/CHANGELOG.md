@@ -1,5 +1,13 @@
 # @dalukasdev/ui
 
+## 0.0.6
+
+### Patch Changes
+
+- e484ba4: react should be external
+- Updated dependencies [e484ba4]
+  - @dalukasdev/tailwind@0.0.6
+
 ## 0.0.5
 
 ### Patch Changes

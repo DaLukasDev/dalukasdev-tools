@@ -1,5 +1,11 @@
 # @dalukasdev/utils
 
+## 0.0.6
+
+### Patch Changes
+
+- e484ba4: react should be external
+
 ## 0.0.5
 
 ### Patch Changes

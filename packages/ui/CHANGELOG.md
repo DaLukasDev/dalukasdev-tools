@@ -1,5 +1,11 @@
 # @dalukasdev/ui
 
+## 0.0.11
+
+### Patch Changes
+
+- 2117fa2: all styles for config
+
 ## 0.0.10
 
 ### Patch Changes

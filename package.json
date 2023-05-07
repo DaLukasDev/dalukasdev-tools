@@ -5,8 +5,7 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint -- --fix ",
-    "mp:check": "manypkg check",
-    "mp:fix": "manypkg fix",
+    "mp:check": "manypkg check |& grep -v '@workspace'",
     "clean": "turbo run clean && rm -rf ./node_modules ./pnpm-lock.yaml",
     "prettier:check": "turbo run prettier:check",
     "prettier:fix": "turbo run prettier:fix",
@@ -16,15 +15,13 @@
   "name": "dalukasdev",
   "packageManager": "pnpm@8.4.0",
   "dependencies": {
+    "@changesets/cli": "^2.26.1",
     "@manypkg/cli": "^0.20.0",
     "eslint": "^8.40.0",
     "eslint-config-custom": "workspace:*",
     "plop": "^3.1.2",
-    "prettier": "^2.5.1",
+    "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.2.8",
     "turbo": "latest"
-  },
-  "devDependencies": {
-    "@changesets/cli": "^2.26.1"
   }
 }

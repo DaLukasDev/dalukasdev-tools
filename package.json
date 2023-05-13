@@ -11,7 +11,8 @@
     "prettier:check": "turbo run prettier:check",
     "prettier:fix": "turbo run prettier:fix",
     "plop": "plop",
-    "publish-packages": "turbo run build && changeset version && changeset publish"
+    "ci:version": "pnpm changelog && changeset version && pnpm install --no-frozen-lockfile && git add .",
+    "ci:publish": "turbo run build && git status && pnpm publish -r"
   },
   "name": "dalukasdev",
   "packageManager": "pnpm@8.4.0",

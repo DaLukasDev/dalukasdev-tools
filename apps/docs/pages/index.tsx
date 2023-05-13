@@ -7,35 +7,35 @@ export default function Docs() {
       name: 'John Doe',
       age: 25,
       gender: 'male',
-      xd: 'xd',
+      xd: '2023-05-13 02:55:28',
     },
     {
       id: '2',
       name: 'John Doe',
       age: 25,
       gender: 'male',
-      xd: 'xd',
+      xd: '2023-05-13 02:55:28',
     },
     {
       id: '3',
       name: 'John Doe',
       age: 25,
       gender: 'male',
-      xd: 'xd',
+      xd: '2023-05-13 02:55:28',
     },
     {
       id: '4',
       name: 'John Doe',
       age: 25,
       gender: 'male',
-      xd: 'xd',
+      xd: '2023-05-13 02:55:28',
     },
     {
       id: '5',
       name: 'John Doe',
       age: 25,
       gender: 'male',
-      xd: 'xd',
+      xd: '2023-05-13 02:55:28',
     },
   ];
 
@@ -55,7 +55,7 @@ export default function Docs() {
     onMultiSelectChange,
   } = useTable<SingleDataType>();
 
-  const columns: ColumnDefinitionType<Partial<SingleDataType>>[] = [
+  const columns: ColumnDefinitionType<SingleDataType>[] = [
     {
       key: 'name',
       header: "User's name",
@@ -78,10 +78,12 @@ export default function Docs() {
       key: 'xd',
       header: 'xd',
       searchable: true,
-      searchKey: 'genderrrr',
+      searchKey: 'genderrrrs',
+      type: 'date',
     },
   ];
 
+  console.log(searchTerm);
   return (
     <div className="p-10">
       <div ref={tableCard}>

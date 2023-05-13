@@ -1,0 +1,23 @@
+{
+  "name": "@dalukasdev/eslint-config",
+  "main": "index.js",
+  "license": "MIT",
+  "version": "0.0.6",
+  "scripts": {
+    "clean": "rm -rf node_modules .turbo",
+    "prettier:fix": "prettier --write \"**/*.js*\"",
+    "prettier:check": "prettier --check \"**/*.js*\""
+  },
+  "dependencies": {
+    "@types/eslint": "^8.37.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "eslint-config-next": "^13.4.1",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-turbo": "^1.9.3",
+    "eslint-plugin-react": "7.32.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

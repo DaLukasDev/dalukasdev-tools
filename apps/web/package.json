@@ -11,7 +11,7 @@
     "prettier:check": "prettier --check \"**/*.ts*\""
   },
   "dependencies": {
-    "@dalukasdev/ui": "workspace:*",
+    "@dalukasdev/ui": "0.0.18",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -20,8 +20,7 @@
     "@types/node": "^17.0.12",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
-    "eslint-config-dalukasdev": "workspace:*",
-    "tsconfig": "workspace:*",
+    "@dalukasdev/eslint-config": "0.0.6",
     "typescript": "^5.0.4"
   }
 }

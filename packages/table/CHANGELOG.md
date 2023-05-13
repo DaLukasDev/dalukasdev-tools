@@ -1,5 +1,11 @@
 # @dalukasdev/table
 
+## 0.0.20
+
+### Patch Changes
+
+- 4a9a076: bump packages - force rerelease
+
 ## 0.0.19
 
 ### Patch Changes

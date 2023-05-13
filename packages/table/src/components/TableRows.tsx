@@ -91,8 +91,7 @@ export const TableRows = <T extends { [x: string]: any }>({
                             </>
                           ) : (
                             <>
-                              {(column.prefix ?? '') +
-                                ' ' +
+                              {(column.prefix + ' ' ?? '') +
                                 (column.isDate
                                   ? dayjs(row[column.key]).format(
                                       column.dateFormat ?? 'DD/MM/YYYY'

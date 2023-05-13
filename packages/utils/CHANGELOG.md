@@ -1,5 +1,12 @@
 # @dalukasdev/utils
 
+## 0.0.22
+
+### Patch Changes
+
+- acc49c0: test release
+- 495f1d0: rerelease with working release step
+
 ## 0.0.21
 
 ### Patch Changes

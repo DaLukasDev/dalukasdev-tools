@@ -6,35 +6,35 @@ export default function Docs() {
       id: '1',
       name: 'John Doe',
       age: 25,
-      gender: 'male',
+      element: 'male',
       xd: '2023-05-13 02:55:28',
     },
     {
       id: '2',
       name: 'John Doe',
       age: 25,
-      gender: 'male',
+      element: 'male',
       xd: '2023-05-13 02:55:28',
     },
     {
       id: '3',
       name: 'John Doe',
       age: 25,
-      gender: 'male',
+      element: 'male',
       xd: '2023-05-13 02:55:28',
     },
     {
       id: '4',
       name: 'John Doe',
       age: 25,
-      gender: 'male',
+      element: 'male',
       xd: '2023-05-13 02:55:28',
     },
     {
       id: '5',
       name: 'John Doe',
       age: 25,
-      gender: 'male',
+      element: 'male',
       xd: '2023-05-13 02:55:28',
     },
   ];
@@ -69,10 +69,10 @@ export default function Docs() {
       searchKey: 'age',
     },
     {
-      key: 'gender',
-      header: 'gender',
-      searchable: true,
-      searchKey: 'genderrrr',
+      key: 'element',
+      header: 'test element',
+      type: 'element',
+      element: (row) => <div>{}</div>,
     },
     {
       key: 'xd',
@@ -92,14 +92,15 @@ export default function Docs() {
           columns={columns}
           // paginatorProps={data?.getPastEvents?.paginatorInfo}
           onSearchChange={onSearchChangedHandler}
-          onNextPage={nextPageHandler}
-          onPreviousPage={prevPageHandler}
-          onPageSizeChange={pageSizeChangeHandler}
-          currentPageSize={pageSize}
-          currentPage={page}
+          // onNextPage={nextPageHandler}
+          // onPreviousPage={prevPageHandler}
+          // onPageSizeChange={pageSizeChangeHandler}
+          // currentPageSize={pageSize}
+          // currentPage={page}
           searchTerm={searchTerm}
-          // disableSearch
+          disableSearch
           // isLoading={(isLoading && !data) || (isRefetching && !data)}
+          pagination={false}
         />
       </div>
     </div>

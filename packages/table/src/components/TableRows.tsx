@@ -1,17 +1,8 @@
 import { Loader } from '@dalukasdev/ui';
-import type { TableRowsProps } from '../@types';
+import type { NestedKeys, TableRowsProps } from '../@types';
 import { TableCell } from './TableCell';
 
-// export const TableRows = <T extends { [x: string]: string }>({
-export const TableRows = <
-  T extends { id: string } & {
-    [K1 in keyof T]: T[K1] extends object
-      ? {
-          [K2 in keyof T[K1]]: T[K1][K2];
-        }
-      : T[K1];
-  }
->({
+export const TableRows = <T extends { id: string } & NestedKeys<T>>({
   data = [],
   columns,
   checkbox,

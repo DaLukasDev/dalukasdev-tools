@@ -13,6 +13,13 @@ export type PaginatorInfo = {
   lastItem?: number | null;
 };
 
+export type NestedKeys<T> = {
+  [K1 in keyof T]: T[K1] extends object
+    ? {
+        [K2 in keyof T[K1]]: T[K1][K2];
+      }
+    : T[K1];
+};
 export interface ColumnDefinitionType<T> {
   key: keyof T | 'actions';
   subKey?: keyof T[keyof T];
@@ -24,6 +31,7 @@ export interface ColumnDefinitionType<T> {
   dateFormat?: string;
   className?: string;
   type?: TableCellType;
+  element?: (row: T) => JSX.Element;
 }
 
 export interface TableProps<T, K extends keyof T> {
@@ -36,14 +44,15 @@ export interface TableProps<T, K extends keyof T> {
   multiSelect?: string[];
   searchTerm?: Partial<{ [x in K]: string }>;
   onSearchChange: (searchTerm: string, column: K | string) => void;
-  onNextPage: (maxPage: number) => void;
-  onPreviousPage: () => void;
-  onPageSizeChange: (pageSize: number) => void;
+  onNextPage?: (maxPage: number) => void;
+  onPreviousPage?: () => void;
+  onPageSizeChange?: (pageSize: number) => void;
   onMultiSelectChange?: (selectedItem: string, added: boolean) => void;
   disableSearch?: boolean;
   isLoading?: boolean;
   styles?: TableStyles;
   locale?: localeConfig;
+  pagination?: boolean;
 }
 
 export interface TableHeaderProps<T, K extends keyof T> {
@@ -78,9 +87,9 @@ export interface TableCellProps<T> {
 export interface TableFooterProps {
   currentPageSize: number;
   currentPage: number;
-  onNextPage: (maxPage: number) => void;
-  onPreviousPage: () => void;
-  onPageSizeChange: (pageSize: number) => void;
+  onNextPage?: (maxPage: number) => void;
+  onPreviousPage?: () => void;
+  onPageSizeChange?: (pageSize: number) => void;
   paginatorProps: PaginatorInfo;
   styles: TableStyles;
   locale: localeConfig;

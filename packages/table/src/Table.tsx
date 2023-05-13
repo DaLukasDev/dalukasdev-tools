@@ -1,16 +1,10 @@
-import type { PaginatorInfo, TableProps } from './@types';
+import type { NestedKeys, PaginatorInfo, TableProps } from './@types';
 import { TableFooter, TableHeader, TableRows } from './components';
 import { defaultLocale } from './config';
 import { defaultStyles } from './config/styles';
 
 export const Table = <
-  T extends { id: string } & {
-    [K1 in keyof T]: T[K1] extends object
-      ? {
-          [K2 in keyof T[K1]]: T[K1][K2];
-        }
-      : T[K1];
-  },
+  T extends { id: string } & NestedKeys<T>,
   K extends keyof T
 >({
   data = [],
@@ -30,6 +24,7 @@ export const Table = <
   isLoading,
   locale: CLocale,
   styles: CStyles,
+  pagination = true,
 }: TableProps<T, K>) => {
   const styles = CStyles ?? defaultStyles;
   const locale = CLocale ?? defaultLocale;
@@ -58,16 +53,18 @@ export const Table = <
           />
         </table>
       </div>
-      <TableFooter
-        paginatorProps={paginatorProps ?? ({} as PaginatorInfo)}
-        currentPageSize={currentPageSize}
-        currentPage={currentPage}
-        onNextPage={onNextPage}
-        onPreviousPage={onPreviousPage}
-        onPageSizeChange={onPageSizeChange}
-        locale={locale}
-        styles={styles}
-      />
+      {pagination && (
+        <TableFooter
+          paginatorProps={paginatorProps ?? ({} as PaginatorInfo)}
+          currentPageSize={currentPageSize}
+          currentPage={currentPage}
+          onNextPage={onNextPage}
+          onPreviousPage={onPreviousPage}
+          onPageSizeChange={onPageSizeChange}
+          locale={locale}
+          styles={styles}
+        />
+      )}
     </div>
   );
 };

@@ -8,7 +8,7 @@ export const defaultStyles: TableStyles = {
   searchHeaderClasses:
     'break-keep border-b border-gray-300 bg-zinc-100 px-6 py-3 text-center text-xs font-medium uppercase leading-4 tracking-wider text-gray-600 dark:border-zinc-600 dark:bg-zinc-900 dark:text-white ',
   searchInputClasses:
-    'rounded-lg border border-zinc-500 bg-zinc-50 p-1.5 pl-3 text-sm text-gray-900  dark:border-zinc-600 dark:bg-zinc-800 dark:text-white dark:placeholder-gray-400 sm:w-full min-w-[150px] placeholder:text-center first:placeholder:text-left',
+    'rounded-lg border border-zinc-500 bg-zinc-50 p-1.5 pl-3 text-sm text-gray-900  dark:border-zinc-600 dark:bg-zinc-800 dark:text-white dark:placeholder-gray-400 sm:w-full min-w-[80px] placeholder:text-center first:placeholder:text-left',
   tableRowClasses:
     'whitespace-nowrap border-b border-gray-300 bg-zinc-100 text-black dark:border-zinc-600 dark:bg-zinc-900 dark:text-slate-300 last:border-b-0 odd:bg-gray-100 dark:odd:bg-zinc-700 odd:bg-opacity-40 ',
   tableCellStyles:

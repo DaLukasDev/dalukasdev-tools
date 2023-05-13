@@ -1,17 +1,9 @@
 import dayjs from 'dayjs';
 import formatter from 'dayjs/plugin/customParseFormat.js';
 import type { FC } from 'react';
-import type { TableCellProps, TableWrapProps } from '../@types';
+import type { NestedKeys, TableCellProps, TableWrapProps } from '../@types';
 
-export const TableCell = <
-  T extends {
-    [K1 in keyof T]: T[K1] extends object
-      ? {
-          [K2 in keyof T[K1]]: T[K1][K2];
-        }
-      : T[K1];
-  }
->({
+export const TableCell = <T extends NestedKeys<T>>({
   column: {
     key,
     actions,
@@ -20,6 +12,7 @@ export const TableCell = <
     type = 'text',
     prefix,
     subKey,
+    element,
   },
   row,
   index,
@@ -38,7 +31,12 @@ export const TableCell = <
   );
 
   if (key === 'actions') {
-    if (!actions) return <></>;
+    if (!actions)
+      return (
+        <TableWrap>
+          <></>
+        </TableWrap>
+      );
     return (
       <TableWrap>
         {actions.length > 1 ? (
@@ -70,7 +68,9 @@ export const TableCell = <
 
   if (type === 'text') {
     return (
-      <TableWrap>{prefix ? `${prefix} ${toRender}` : <>toRender</>}</TableWrap>
+      <TableWrap>
+        {prefix ? `${prefix} ${toRender}` : <>{toRender}</>}
+      </TableWrap>
     );
   }
   if (type === 'date') {
@@ -87,11 +87,13 @@ export const TableCell = <
     );
   }
   if (type === 'element') {
-    return (
-      <TableWrap>
-        <></>
-      </TableWrap>
-    );
+    if (!element)
+      return (
+        <TableWrap>
+          <></>
+        </TableWrap>
+      );
+    return <TableWrap>{element(row)}</TableWrap>;
   }
 
   return <TableWrap>{locale.noValue}</TableWrap>;

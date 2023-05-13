@@ -1,5 +1,11 @@
 # @dalukasdev/table
 
+## 0.0.21
+
+### Patch Changes
+
+- test release
+
 ## 0.0.20
 
 ### Patch Changes

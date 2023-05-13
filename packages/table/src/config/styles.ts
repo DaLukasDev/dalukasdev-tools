@@ -1,4 +1,4 @@
-import { TableStyles } from '../@types';
+import type { TableStyles } from '../@types';
 
 export const defaultStyles: TableStyles = {
   tableStyles:

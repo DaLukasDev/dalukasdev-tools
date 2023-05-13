@@ -3,7 +3,16 @@ import { TableFooter, TableHeader, TableRows } from './components';
 import { defaultLocale } from './config';
 import { defaultStyles } from './config/styles';
 
-export const Table = <T extends { id: string }, K extends keyof T>({
+export const Table = <
+  T extends { id: string } & {
+    [K1 in keyof T]: T[K1] extends object
+      ? {
+          [K2 in keyof T[K1]]: T[K1][K2];
+        }
+      : T[K1];
+  },
+  K extends keyof T
+>({
   data = [],
   columns,
   onNextPage,
@@ -24,7 +33,6 @@ export const Table = <T extends { id: string }, K extends keyof T>({
 }: TableProps<T, K>) => {
   const styles = CStyles ?? defaultStyles;
   const locale = CLocale ?? defaultLocale;
-
   return (
     <div className={styles.tableStyles}>
       <div className="overflow-x-auto">

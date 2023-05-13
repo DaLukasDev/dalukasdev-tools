@@ -1,9 +1,17 @@
 import { Loader } from '@dalukasdev/ui';
-import dayjs from 'dayjs';
-import formatter from 'dayjs/plugin/customParseFormat.js';
-import { TableActionsProps, TableRowsProps } from '../@types';
+import type { TableRowsProps } from '../@types';
+import { TableCell } from './TableCell';
 
-export const TableRows = <T extends { [x: string]: any }>({
+// export const TableRows = <T extends { [x: string]: string }>({
+export const TableRows = <
+  T extends { id: string } & {
+    [K1 in keyof T]: T[K1] extends object
+      ? {
+          [K2 in keyof T[K1]]: T[K1][K2];
+        }
+      : T[K1];
+  }
+>({
   data = [],
   columns,
   checkbox,
@@ -13,34 +21,6 @@ export const TableRows = <T extends { [x: string]: any }>({
   styles,
   locale,
 }: TableRowsProps<T>): JSX.Element => {
-  dayjs.extend(formatter);
-
-  const ActionButtons = (actions: TableActionsProps<T>[], rowData: T) => {
-    return actions.length > 1 ? (
-      <div className="inline-flex rounded-md" role="group">
-        {actions.map((action, index) => (
-          <button
-            key={`action-${index}`}
-            className={action.styles}
-            onClick={() => action.onClick(rowData)}
-            onAuxClick={() => action.onAuxClick && action.onAuxClick(rowData)}
-          >
-            {action.icon}
-          </button>
-        ))}
-      </div>
-    ) : (
-      actions.length === 1 && (
-        <button
-          className={actions[0]?.styles}
-          onClick={() => actions[0]?.onClick(rowData)}
-        >
-          {actions[0]?.icon}
-        </button>
-      )
-    );
-  };
-
   return (
     <tbody>
       {isLoading ? (
@@ -72,42 +52,16 @@ export const TableRows = <T extends { [x: string]: any }>({
                     />
                   </td>
                 )}
-                {columns.map((column, index2) => {
-                  return (
-                    <td
-                      key={`cell-${index2}`}
-                      className={`${styles.tableCellStyles} ${
-                        column.className ? column.className : ''
-                      }`}
-                    >
-                      {!column.key.toString().includes('actions') ? (
-                        row[column.key] ? (
-                          column.subKey ? (
-                            <>
-                              {(column.prefix ?? '') +
-                                ' ' +
-                                row[column.key][column.subKey] ??
-                                locale.noValue}
-                            </>
-                          ) : (
-                            <>
-                              {(column.prefix + ' ' ?? '') +
-                                (column.isDate
-                                  ? dayjs(row[column.key]).format(
-                                      column.dateFormat ?? 'DD/MM/YYYY'
-                                    )
-                                  : row[column.key])}
-                            </>
-                          )
-                        ) : (
-                          locale.noValue
-                        )
-                      ) : (
-                        column.actions && ActionButtons(column.actions, row)
-                      )}
-                    </td>
-                  );
-                })}
+                {columns.map((column, index2) => (
+                  <TableCell
+                    key={index2}
+                    column={column}
+                    index={index2}
+                    row={row}
+                    locale={locale}
+                    styles={styles}
+                  />
+                ))}
               </tr>
             ))}
           {!data.length && (

@@ -1,4 +1,6 @@
-import type { RefObject } from 'react';
+import type { ReactNode, RefObject } from 'react';
+
+export type TableCellType = 'text' | 'date' | 'element';
 
 export type PaginatorInfo = {
   hasMorePages: boolean;
@@ -13,15 +15,15 @@ export type PaginatorInfo = {
 
 export interface ColumnDefinitionType<T> {
   key: keyof T | 'actions';
-  subKey?: string;
+  subKey?: keyof T[keyof T];
   prefix?: string;
   header: string;
   searchable?: boolean;
   searchKey?: keyof T | string;
   actions?: TableActionsProps<T>[];
-  isDate?: boolean;
   dateFormat?: string;
   className?: string;
+  type?: TableCellType;
 }
 
 export interface TableProps<T, K extends keyof T> {
@@ -65,6 +67,14 @@ export interface TableRowsProps<T> {
   locale: localeConfig;
 }
 
+export interface TableCellProps<T> {
+  column: ColumnDefinitionType<T>;
+  row: T;
+  index: number;
+  styles: TableStyles;
+  locale: localeConfig;
+}
+
 export interface TableFooterProps {
   currentPageSize: number;
   currentPage: number;
@@ -85,6 +95,9 @@ export interface TableActionsProps<T> {
 
 export type SearchType<T> = Partial<{ [x in keyof T | string]: string }>;
 export type ColumnType<T> = Array<ColumnDefinitionType<T>>;
+export type TableWrapProps = {
+  children: ReactNode;
+};
 
 export interface TableReturn<T> {
   page: number;

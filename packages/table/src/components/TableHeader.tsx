@@ -1,4 +1,4 @@
-import { TableHeaderProps } from '../@types';
+import type { TableHeaderProps } from '../@types';
 
 export const TableHeader = <T, K extends keyof T>({
   columns,

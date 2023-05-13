@@ -1,4 +1,4 @@
-import { localeConfig } from '../@types';
+import type { localeConfig } from '../@types';
 
 export const defaultLocale: localeConfig = {
   searchPlaceholder: 'Search...',

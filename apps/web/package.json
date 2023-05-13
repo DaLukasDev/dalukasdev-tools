@@ -11,7 +11,7 @@
     "prettier:check": "prettier --check \"**/*.ts*\""
   },
   "dependencies": {
-    "@dalukasdev/ui": "0.0.18",
+    "@dalukasdev/ui": "0.0.19",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

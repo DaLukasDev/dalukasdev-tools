@@ -1,5 +1,11 @@
 # @dalukasdev/utils
 
+## 0.0.19
+
+### Patch Changes
+
+- 8bd0626: refactored table
+
 ## 0.0.18
 
 ### Patch Changes

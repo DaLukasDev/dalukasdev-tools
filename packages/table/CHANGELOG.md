@@ -1,5 +1,12 @@
 # @dalukasdev/table
 
+## 0.0.23
+
+### Patch Changes
+
+- 7872adb: add element type logic + made pagination optional
+- 6427ba9: fixed failing typecheck on the footer component
+
 ## 0.0.22
 
 ### Patch Changes

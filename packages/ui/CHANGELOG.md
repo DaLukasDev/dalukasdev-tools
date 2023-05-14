@@ -1,5 +1,14 @@
 # @dalukasdev/ui
 
+## 0.1.2
+
+### Patch Changes
+
+- 93d1b8a: - Renamed pagination boolean to disablePagination boolean and made it false by default
+  - moved prettier to root of repo to be ran with 1 command
+  - add import prettifier
+  - cleaned up package.jsons
+
 ## 0.1.1
 
 ### Patch Changes

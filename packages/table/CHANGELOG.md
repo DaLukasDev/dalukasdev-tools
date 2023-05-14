@@ -1,5 +1,11 @@
 # @dalukasdev/table
 
+## 0.0.24
+
+### Patch Changes
+
+- e20b2b3: test clean package publish
+
 ## 0.0.23
 
 ### Patch Changes

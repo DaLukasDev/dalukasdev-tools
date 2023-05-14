@@ -27,8 +27,8 @@ const Indexes: FC<IndexesProps> = ({
 
 interface ButtonsProps {
   lastPage?: number;
-  onNextPage: (page: number) => void;
-  onPreviousPage: () => void;
+  onNextPage?: (page: number) => void;
+  onPreviousPage?: () => void;
   styles: TableStyles;
   locale: localeConfig;
 }
@@ -39,7 +39,14 @@ const Buttons: FC<ButtonsProps> = ({
   styles,
 }) => (
   <div className="mt-2 space-x-0">
-    <button onClick={onPreviousPage} className={styles.tableFooterButtonStyles}>
+    <button
+      onClick={() =>
+        onPreviousPage
+          ? onPreviousPage
+          : console.error('onPreviousPage not implemented')
+      }
+      className={styles.tableFooterButtonStyles}
+    >
       <svg
         aria-hidden="true"
         className="mr-2 h-5 w-5"
@@ -55,7 +62,11 @@ const Buttons: FC<ButtonsProps> = ({
       </svg>
     </button>
     <button
-      onClick={() => onNextPage(lastPage ?? 100)}
+      onClick={() =>
+        onNextPage
+          ? onNextPage(lastPage ?? 100)
+          : console.error('onNextPage is not defined')
+      }
       className={styles.tableFooterButtonStyles}
     >
       <svg
@@ -78,7 +89,7 @@ const Buttons: FC<ButtonsProps> = ({
 interface RowsPerPageProps {
   currentPageSize: number;
   total: number;
-  onPageSizeChange: (size: number) => void;
+  onPageSizeChange?: (size: number) => void;
   styles: TableStyles;
   locale: localeConfig;
 }
@@ -102,7 +113,11 @@ const RowsPerPage: FC<RowsPerPageProps> = ({
         { label: '50', value: 50 },
         { label: locale.all, value: total },
       ]}
-      onChange={(e) => onPageSizeChange(parseInt(e.target.value))}
+      onChange={(e) =>
+        onPageSizeChange
+          ? onPageSizeChange(parseInt(e.target.value))
+          : console.error('onPageSizeChange is not defined')
+      }
     />
   </div>
 );

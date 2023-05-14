@@ -31,7 +31,7 @@ export const Table = <
   return (
     <div className={styles.tableStyles}>
       <div className="overflow-x-auto">
-        <table className="min-w-full table-auto">
+        <table className={styles.table}>
           <TableHeader
             onSearchChange={onSearchChange}
             searchTerm={searchTerm}

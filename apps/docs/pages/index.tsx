@@ -85,7 +85,7 @@ export default function Docs() {
 
   console.log(searchTerm);
   return (
-    <div className="p-10">
+    <div className="bg-red-500 p-10">
       <div ref={tableCard}>
         <Table
           data={data}
@@ -98,9 +98,9 @@ export default function Docs() {
           // currentPageSize={pageSize}
           // currentPage={page}
           searchTerm={searchTerm}
-          disableSearch
+          // disableSearch
           // isLoading={(isLoading && !data) || (isRefetching && !data)}
-          pagination={false}
+          // pagination={false}
         />
       </div>
     </div>

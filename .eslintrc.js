@@ -16,6 +16,9 @@ const config = {
     next: {
       rootDir: ['apps/docs'],
     },
+    react: {
+      version: '18.2.0',
+    },
   },
 };
 

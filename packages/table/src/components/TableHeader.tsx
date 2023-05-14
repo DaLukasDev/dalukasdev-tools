@@ -37,7 +37,7 @@ export const TableHeader = <T, K extends keyof T>({
   ));
 
   return (
-    <thead>
+    <thead className={styles.thead}>
       <tr>
         {checkbox && <th className={styles.tableHeaderClasses}>Multi</th>}
         {headers}

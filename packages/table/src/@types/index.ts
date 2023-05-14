@@ -133,6 +133,9 @@ export type localeConfig = {
   of: string;
 };
 export type TableStyles = {
+  thead: string;
+  tbody: string;
+  table: string;
   tableHeaderClasses: string;
   searchHeaderClasses: string;
   searchInputClasses: string;

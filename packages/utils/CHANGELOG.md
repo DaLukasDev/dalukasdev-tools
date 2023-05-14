@@ -1,5 +1,11 @@
 # @dalukasdev/utils
 
+## 0.1.0
+
+### Minor Changes
+
+- c63d06f: table overflow issue fixed - release test version
+
 ## 0.0.24
 
 ### Patch Changes

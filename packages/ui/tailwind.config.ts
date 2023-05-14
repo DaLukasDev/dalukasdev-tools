@@ -1,4 +1,5 @@
 import tailwind from '@dalukasdev/tailwind';
+
 const config = {
   presets: [tailwind],
 };

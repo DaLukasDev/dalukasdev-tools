@@ -52,7 +52,7 @@ export interface TableProps<T, K extends keyof T> {
   isLoading?: boolean;
   styles?: TableStyles;
   locale?: localeConfig;
-  pagination?: boolean;
+  disablePagination?: boolean;
 }
 
 export interface TableHeaderProps<T, K extends keyof T> {

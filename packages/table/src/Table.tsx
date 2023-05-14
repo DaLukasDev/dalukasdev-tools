@@ -24,7 +24,7 @@ export const Table = <
   isLoading,
   locale: CLocale,
   styles: CStyles,
-  pagination = true,
+  disablePagination = false,
 }: TableProps<T, K>) => {
   const styles = CStyles ?? defaultStyles;
   const locale = CLocale ?? defaultLocale;
@@ -53,7 +53,7 @@ export const Table = <
           />
         </table>
       </div>
-      {pagination && (
+      {!disablePagination && (
         <TableFooter
           paginatorProps={paginatorProps ?? ({} as PaginatorInfo)}
           currentPageSize={currentPageSize}

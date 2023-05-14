@@ -90,6 +90,8 @@ export default function Docs() {
         <Table
           data={data}
           columns={columns}
+          disableSearch
+          disablePagination
           // paginatorProps={data?.getPastEvents?.paginatorInfo}
           // onSearchChange={onSearchChangedHandler}
           // onNextPage={nextPageHandler}

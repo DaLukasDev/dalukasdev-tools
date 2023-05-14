@@ -8,8 +8,7 @@
     "lint:fix": "turbo run lint -- --fix ",
     "mp:check": "manypkg check |& grep -v '@workspace'",
     "clean": "turbo run clean && rm -rf ./node_modules ./pnpm-lock.yaml",
-    "prettier:check": "turbo run prettier:check",
-    "prettier:fix": "turbo run prettier:fix",
+    "format": "prettier --write \"**/*.{js,cjs,mjs,ts,tsx,md,json}\" --ignore-path .gitignore",
     "plop": "plop",
     "ci:version": "pnpm changeset version && pnpm install --no-frozen-lockfile && git add .",
     "ci:publish": "turbo run build && git status && pnpm publish -r"
@@ -19,6 +18,7 @@
   "dependencies": {
     "@changesets/cli": "^2.26.1",
     "@dalukasdev/eslint-config": "0.0.6",
+    "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
     "@manypkg/cli": "^0.20.0",
     "eslint": "^8.40.0",
     "plop": "^3.1.2",

@@ -1,6 +1,6 @@
+import type { FC } from 'react';
 import dayjs from 'dayjs';
 import formatter from 'dayjs/plugin/customParseFormat.js';
-import type { FC } from 'react';
 import type { NestedKeys, TableCellProps, TableWrapProps } from '../@types';
 
 export const TableCell = <T extends NestedKeys<T>>({

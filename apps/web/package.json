@@ -6,9 +6,7 @@
     "dev": "next dev",
     "buildd": "next build",
     "start": "next start",
-    "clean": "rm -rf node_modules .turbo",
-    "prettier:fix": "prettier --write \"**/*.ts*\"",
-    "prettier:check": "prettier --check \"**/*.ts*\""
+    "clean": "rm -rf node_modules .turbo"
   },
   "dependencies": {
     "@dalukasdev/ui": "0.1.1",

@@ -91,13 +91,13 @@ export default function Docs() {
           data={data}
           columns={columns}
           // paginatorProps={data?.getPastEvents?.paginatorInfo}
-          onSearchChange={onSearchChangedHandler}
+          // onSearchChange={onSearchChangedHandler}
           // onNextPage={nextPageHandler}
           // onPreviousPage={prevPageHandler}
           // onPageSizeChange={pageSizeChangeHandler}
           // currentPageSize={pageSize}
           // currentPage={page}
-          searchTerm={searchTerm}
+          // searchTerm={searchTerm}
           // disableSearch
           // isLoading={(isLoading && !data) || (isRefetching && !data)}
           // pagination={false}

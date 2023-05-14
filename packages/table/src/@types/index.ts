@@ -43,7 +43,7 @@ export interface TableProps<T, K extends keyof T> {
   checkbox?: boolean;
   multiSelect?: string[];
   searchTerm?: Partial<{ [x in K]: string }>;
-  onSearchChange: (searchTerm: string, column: K | string) => void;
+  onSearchChange?: (searchTerm: string, column: K | string) => void;
   onNextPage?: (maxPage: number) => void;
   onPreviousPage?: () => void;
   onPageSizeChange?: (pageSize: number) => void;
@@ -58,7 +58,7 @@ export interface TableProps<T, K extends keyof T> {
 export interface TableHeaderProps<T, K extends keyof T> {
   columns: Array<ColumnDefinitionType<T>>;
   searchTerm?: Partial<{ [x in K]: string }>;
-  onSearchChange: (searchTerm: string, column: K | string) => void;
+  onSearchChange?: (searchTerm: string, column: K | string) => void;
   checkbox?: boolean;
   disableSearch?: boolean;
   styles: TableStyles;
@@ -118,7 +118,7 @@ export interface TableReturn<T> {
   nextPageHandler: (maxPage: number) => void;
   prevPageHandler: () => void;
   pageSizeChangeHandler: (size: number) => void;
-  onMultiSelectChange?: (value: string, checked: boolean) => void;
+  onMultiSelectChange: (value: string, checked: boolean) => void;
   resetTable: () => void;
 }
 

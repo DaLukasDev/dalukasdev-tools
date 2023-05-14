@@ -27,9 +27,11 @@ export const TableHeader = <T, K extends keyof T>({
           placeholder={locale.searchPlaceholder}
           className={styles.searchInputClasses}
           onChange={(e) =>
-            column.searchKey
-              ? onSearchChange(column.searchKey.toString(), e.target.value)
-              : onSearchChange(column.key.toString(), e.target.value)
+            onSearchChange
+              ? column.searchKey
+                ? onSearchChange(column.searchKey.toString(), e.target.value)
+                : onSearchChange(column.key.toString(), e.target.value)
+              : console.error('onSearchChange is not implemented')
           }
         />
       )}

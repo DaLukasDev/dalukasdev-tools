@@ -1,5 +1,11 @@
 # @dalukasdev/ui
 
+## 0.1.1
+
+### Patch Changes
+
+- d1f718e: made onSearchTermChange optional
+
 ## 0.1.0
 
 ### Minor Changes

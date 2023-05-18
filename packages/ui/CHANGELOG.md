@@ -1,5 +1,11 @@
 # @dalukasdev/ui
 
+## 0.1.3
+
+### Patch Changes
+
+- 8605fab: fix checkbox being styleless
+
 ## 0.1.2
 
 ### Patch Changes

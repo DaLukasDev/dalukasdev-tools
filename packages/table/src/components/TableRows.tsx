@@ -24,7 +24,7 @@ export const TableRows = <T extends { id: string } & NestedKeys<T>>({
         data.map((row, index) => (
           <tr key={`row-${index}`} className={`${styles.tableRowClasses}`}>
             {checkbox && row.id && (
-              <td>
+              <td className={styles.tableCellStyles}>
                 <input
                   id={`cb-row-${index}`}
                   type="checkbox"

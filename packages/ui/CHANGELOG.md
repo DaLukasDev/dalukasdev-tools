@@ -1,5 +1,11 @@
 # @dalukasdev/ui
 
+## 0.1.4
+
+### Patch Changes
+
+- 4b1bd2f: add subkey extractor type
+
 ## 0.1.3
 
 ### Patch Changes

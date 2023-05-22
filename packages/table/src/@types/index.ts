@@ -1,5 +1,9 @@
 import type { ReactNode, RefObject } from 'react';
 
+type SubKeys<T> = {
+  [K in keyof T]: T[K] extends object ? keyof T[K] : never;
+}[keyof T];
+
 export type TableCellType = 'text' | 'date' | 'element';
 
 export type PaginatorInfo = {
@@ -22,7 +26,7 @@ export type NestedKeys<T> = {
 };
 export interface ColumnDefinitionType<T> {
   key: keyof T | 'actions';
-  subKey?: keyof T[keyof T];
+  subKey?: SubKeys<T>;
   prefix?: string;
   header: string;
   searchable?: boolean;

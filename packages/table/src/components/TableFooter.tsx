@@ -41,7 +41,7 @@ const Buttons: FC<ButtonsProps> = ({
     <button
       onClick={() =>
         onPreviousPage
-          ? onPreviousPage
+          ? onPreviousPage()
           : console.error('onPreviousPage not implemented')
       }
       className={styles.tableFooterButtonStyles}

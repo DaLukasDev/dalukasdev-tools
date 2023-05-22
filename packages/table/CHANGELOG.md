@@ -1,5 +1,11 @@
 # @dalukasdev/table
 
+## 0.1.5
+
+### Patch Changes
+
+- 8dcc5dc: :bug: onPreviousPage wasn't executed
+
 ## 0.1.4
 
 ### Patch Changes

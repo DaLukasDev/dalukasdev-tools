@@ -9,9 +9,9 @@
     "clean": "rm -rf node_modules .turbo"
   },
   "dependencies": {
-    "@dalukasdev/table": "0.1.4",
+    "@dalukasdev/table": "0.1.5",
     "@dalukasdev/tailwind": "0.0.6",
-    "@dalukasdev/ui": "0.1.4",
+    "@dalukasdev/ui": "0.1.5",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

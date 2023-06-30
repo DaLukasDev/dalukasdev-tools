@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { ColumnDefinitionType, Table, useTable } from '@dalukasdev/table';
 
 export default function Docs() {
+  const [searchTerm, setSearchTerm] = useState('');
   const data = [
     {
       id: '1',
@@ -51,7 +53,7 @@ export default function Docs() {
     pageSizeChangeHandler,
     prevPageHandler,
     resetTable,
-    searchTerm,
+
     onMultiSelectChange,
   } = useTable<SingleDataType>();
 
@@ -83,6 +85,10 @@ export default function Docs() {
     },
   ];
 
+  const onGlobalSearchChange = (searchTerm: string) => {
+    setSearchTerm(searchTerm);
+  };
+
   console.log(searchTerm);
   return (
     <div className="bg-red-500 p-10">
@@ -92,6 +98,8 @@ export default function Docs() {
           columns={columns}
           disableSearch
           disablePagination
+          onGlobalSearchChange={onGlobalSearchChange}
+          globalSearchTerm={searchTerm}
           // paginatorProps={data?.getPastEvents?.paginatorInfo}
           // onSearchChange={onSearchChangedHandler}
           // onNextPage={nextPageHandler}

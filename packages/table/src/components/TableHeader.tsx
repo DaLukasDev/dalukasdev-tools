@@ -3,11 +3,13 @@ import type { TableHeaderProps } from '../@types';
 export const TableHeader = <T, K extends keyof T>({
   columns,
   onSearchChange,
+  onGlobalSearchChange,
   searchTerm,
   checkbox,
   disableSearch = false,
   locale,
   styles,
+  globalSearchTerm,
 }: TableHeaderProps<T, K>): JSX.Element => {
   const headers = columns.map((column, index) => (
     <th className={styles.tableHeaderClasses} key={`headCell-${index}`}>
@@ -38,12 +40,28 @@ export const TableHeader = <T, K extends keyof T>({
     </th>
   ));
 
+  const globalFilter = (
+    <th colSpan={columns.length} className={styles.globalSearchHeaderClasses}>
+      <input
+        value={globalSearchTerm ?? ''}
+        placeholder={locale.searchPlaceholder}
+        className={styles.globalSearchInputClasses}
+        onChange={(e) =>
+          onGlobalSearchChange
+            ? onGlobalSearchChange(e.target.value)
+            : console.error('onSearchChange is not implemented')
+        }
+      />
+    </th>
+  );
+
   return (
     <thead className={styles.thead}>
       <tr>
         {checkbox && <th className={styles.tableHeaderClasses}>Multi</th>}
         {headers}
       </tr>
+      {onGlobalSearchChange && <tr>{globalFilter}</tr>}
       {!disableSearch && (
         <tr>
           {checkbox && <th className={styles.tableHeaderClasses}></th>}

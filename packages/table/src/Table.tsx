@@ -25,6 +25,8 @@ export const Table = <
   locale: CLocale,
   styles: CStyles,
   disablePagination = false,
+  globalSearchTerm,
+  onGlobalSearchChange,
 }: TableProps<T, K>) => {
   const styles = CStyles ?? defaultStyles;
   const locale = CLocale ?? defaultLocale;
@@ -33,6 +35,8 @@ export const Table = <
       <div className="overflow-x-auto">
         <table className={styles.table}>
           <TableHeader
+            globalSearchTerm={globalSearchTerm}
+            onGlobalSearchChange={onGlobalSearchChange}
             onSearchChange={onSearchChange}
             searchTerm={searchTerm}
             columns={columns}

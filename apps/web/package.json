@@ -9,7 +9,7 @@
     "clean": "rm -rf node_modules .turbo"
   },
   "dependencies": {
-    "@dalukasdev/ui": "0.1.5",
+    "@dalukasdev/ui": "0.1.6",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

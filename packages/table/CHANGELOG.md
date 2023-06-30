@@ -1,5 +1,11 @@
 # @dalukasdev/table
 
+## 0.1.6
+
+### Patch Changes
+
+- c025cbb: Add global filter option
+
 ## 0.1.5
 
 ### Patch Changes

@@ -16,7 +16,7 @@
     "prettier:check": "prettier --check \"src/**/*.ts*\""
   },
   "devDependencies": {
-    "@dalukasdev/eslint-config": "0.0.6",
+    "@dalukasdev/eslint-config": "workspace:*",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
     "eslint": "^8.40.0",

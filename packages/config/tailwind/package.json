@@ -12,7 +12,7 @@
     "prettier:check": "prettier --check \"src/**/*.ts*\""
   },
   "devDependencies": {
-    "@dalukasdev/eslint-config": "0.0.6",
+    "@dalukasdev/eslint-config": "workspace:*",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.40.0",
     "mini-svg-data-uri": "^1.4.4",

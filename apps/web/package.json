@@ -9,13 +9,13 @@
     "clean": "rm -rf node_modules .turbo"
   },
   "dependencies": {
-    "@dalukasdev/ui": "0.1.6",
+    "@dalukasdev/ui": "workspace:*",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@dalukasdev/eslint-config": "0.0.6",
+    "@dalukasdev/eslint-config": "workspace:*",
     "@types/node": "^17.0.12",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",

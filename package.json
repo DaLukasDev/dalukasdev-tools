@@ -9,7 +9,6 @@
     "mp:check": "manypkg check",
     "clean": "turbo run clean && rm -rf ./node_modules ./pnpm-lock.yaml",
     "format": "prettier --write \"**/*.{js,cjs,mjs,ts,tsx,md,json}\" --ignore-path .gitignore",
-    "plop": "NODE_OPTIONS='--import tsx' plop --plopfile=plopfile.ts",
     "ci:version": "pnpm changeset version && pnpm install --no-frozen-lockfile && git add .",
     "ci:publish": "turbo run build && git status && pnpm publish -r"
   },

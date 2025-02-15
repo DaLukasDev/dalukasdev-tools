@@ -6,7 +6,7 @@
   "module": "dist/index.mjs",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint \"**/*.ts*\"",
+    "lint": "eslint . --max-warnings 0",
     "tsc": "tsc --noEmit",
     "build": "tsup src/index.ts --format cjs,esm --dts --external react",
     "watch": "tsup src/index.ts --format cjs,esm --dts --external react --watch",
@@ -19,7 +19,7 @@
     "@dalukasdev/eslint-config": "workspace:*",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
-    "eslint": "^8.40.0",
+    "eslint": "^9.20.1",
     "react": "^18.2.0",
     "tsup": "^6.7.0",
     "typescript": "^5.0.4"

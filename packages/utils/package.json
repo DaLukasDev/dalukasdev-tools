@@ -7,7 +7,7 @@
   "license": "MIT",
   "sideEffects": false,
   "scripts": {
-    "lint": "eslint ./src --ext .ts,.tsx",
+    "lint": "eslint . --max-warnings 0",
     "tsc": "tsc --noEmit",
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "watch": "tsup src/index.ts --format cjs,esm --dts --watch",
@@ -19,7 +19,7 @@
     "@dalukasdev/eslint-config": "workspace:*",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
-    "eslint": "^8.40.0",
+    "eslint": "^9.20.1",
     "tsup": "^6.7.0",
     "typescript": "^5.0.4"
   },

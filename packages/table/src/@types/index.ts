@@ -1,4 +1,4 @@
-import type { ReactNode, RefObject } from 'react';
+import type { JSX, ReactNode, RefObject } from 'react';
 
 type SubKeys<T> = {
   [K in keyof T]: T[K] extends object ? keyof T[K] : never;
@@ -120,7 +120,7 @@ export interface TableReturn<T> {
   page: number;
   pageSize: number;
   multiSelect: string[];
-  tableCard: RefObject<HTMLDivElement>;
+  tableCard: RefObject<HTMLDivElement | null>;
   searchTerm: SearchType<T>;
   onSearchChangedHandler: (key: keyof T | string, value: string) => void;
   nextPageHandler: (maxPage: number) => void;

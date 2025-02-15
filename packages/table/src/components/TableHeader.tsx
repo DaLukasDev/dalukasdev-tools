@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import type { TableHeaderProps } from '../@types';
 
 export const TableHeader = <T, K extends keyof T>({

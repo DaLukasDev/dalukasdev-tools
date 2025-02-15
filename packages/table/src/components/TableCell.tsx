@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC, JSX } from 'react';
 import dayjs from 'dayjs';
 import formatter from 'dayjs/plugin/customParseFormat.js';
 import type { NestedKeys, TableCellProps, TableWrapProps } from '../@types';

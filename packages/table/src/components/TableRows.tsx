@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import { Loader } from '@dalukasdev/ui';
 import type { NestedKeys, TableRowsProps } from '../@types';
 import { TableCell } from './TableCell';

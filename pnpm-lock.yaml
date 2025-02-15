@@ -85,8 +85,8 @@ importers:
         specifier: ^3.3.2
         version: 3.3.2
       typescript:
-        specifier: ^5.0.4
-        version: 5.0.4
+        specifier: ^5.7.3
+        version: 5.7.3
 
   apps/web:
     dependencies:
@@ -116,8 +116,8 @@ importers:
         specifier: ^18.0.7
         version: 18.0.7
       typescript:
-        specifier: ^5.0.4
-        version: 5.0.4
+        specifier: ^5.7.3
+        version: 5.7.3
 
   packages/config/eslint:
     devDependencies:
@@ -177,10 +177,10 @@ importers:
         version: 3.3.2
       tsup:
         specifier: ^6.7.0
-        version: 6.7.0(postcss@8.4.23)(typescript@5.0.4)
+        version: 6.7.0(postcss@8.4.23)(typescript@5.7.3)
       typescript:
-        specifier: ^5.0.4
-        version: 5.0.4
+        specifier: ^5.7.3
+        version: 5.7.3
 
   packages/table:
     dependencies:
@@ -214,10 +214,10 @@ importers:
         version: 9.20.1(jiti@1.18.2)
       tsup:
         specifier: ^6.7.0
-        version: 6.7.0(postcss@8.4.31)(typescript@5.0.4)
+        version: 6.7.0(postcss@8.4.31)(typescript@5.7.3)
       typescript:
-        specifier: ^5.0.4
-        version: 5.0.4
+        specifier: ^5.7.3
+        version: 5.7.3
 
   packages/ui:
     dependencies:
@@ -242,10 +242,10 @@ importers:
         version: 18.2.0
       tsup:
         specifier: ^6.7.0
-        version: 6.7.0(postcss@8.4.31)(typescript@5.0.4)
+        version: 6.7.0(postcss@8.4.31)(typescript@5.7.3)
       typescript:
-        specifier: ^5.0.4
-        version: 5.0.4
+        specifier: ^5.7.3
+        version: 5.7.3
 
   packages/utils:
     devDependencies:
@@ -263,10 +263,10 @@ importers:
         version: 9.20.1(jiti@1.18.2)
       tsup:
         specifier: ^6.7.0
-        version: 6.7.0(postcss@8.4.31)(typescript@5.0.4)
+        version: 6.7.0(postcss@8.4.31)(typescript@5.7.3)
       typescript:
-        specifier: ^5.0.4
-        version: 5.0.4
+        specifier: ^5.7.3
+        version: 5.7.3
 
 packages:
 
@@ -3509,11 +3509,6 @@ packages:
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
       typescript: '>=4.8.4 <5.8.0'
-
-  typescript@5.0.4:
-    resolution: {integrity: sha512-cW9T5W9xY37cc+jfEnaUvX91foxtHkza3Nw3wkoF4sSlKn0MONdkdEndig/qPBWXNkmplh3NzayQzCiHM4/hqw==}
-    engines: {node: '>=12.20'}
-    hasBin: true
 
   typescript@5.7.3:
     resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}
@@ -7103,7 +7098,7 @@ snapshots:
 
   tslib@2.8.1: {}
 
-  tsup@6.7.0(postcss@8.4.23)(typescript@5.0.4):
+  tsup@6.7.0(postcss@8.4.23)(typescript@5.7.3):
     dependencies:
       bundle-require: 4.0.1(esbuild@0.17.18)
       cac: 6.7.14
@@ -7121,12 +7116,12 @@ snapshots:
       tree-kill: 1.2.2
     optionalDependencies:
       postcss: 8.4.23
-      typescript: 5.0.4
+      typescript: 5.7.3
     transitivePeerDependencies:
       - supports-color
       - ts-node
 
-  tsup@6.7.0(postcss@8.4.31)(typescript@5.0.4):
+  tsup@6.7.0(postcss@8.4.31)(typescript@5.7.3):
     dependencies:
       bundle-require: 4.0.1(esbuild@0.17.18)
       cac: 6.7.14
@@ -7144,7 +7139,7 @@ snapshots:
       tree-kill: 1.2.2
     optionalDependencies:
       postcss: 8.4.31
-      typescript: 5.0.4
+      typescript: 5.7.3
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -7253,8 +7248,6 @@ snapshots:
       typescript: 5.7.3
     transitivePeerDependencies:
       - supports-color
-
-  typescript@5.0.4: {}
 
   typescript@5.7.3: {}
 

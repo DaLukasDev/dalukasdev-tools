@@ -23,8 +23,8 @@ export const TableCell = <T extends NestedKeys<T>>({
 
   const TableWrap: FC<TableWrapProps> = ({ children }) => (
     <td
-      key={`cell-${index}`}
-      className={`${styles.tableCellStyles} ${className ? className : ''}`}
+      key={`cell-${String(index)}`}
+      className={`${styles.tableCellStyles} ${className ?? ''}`}
     >
       {children}
     </td>
@@ -43,10 +43,14 @@ export const TableCell = <T extends NestedKeys<T>>({
           <div className="inline-flex rounded-md" role="group">
             {actions.map((action, index) => (
               <button
-                key={`action-${index}`}
+                key={`action-${String(index)}`}
                 className={action.styles}
-                onClick={() => action.onClick(row)}
-                onAuxClick={() => action.onAuxClick && action.onAuxClick(row)}
+                onClick={() => {
+                  action.onClick(row);
+                }}
+                onAuxClick={() => {
+                  action.onAuxClick?.(row);
+                }}
               >
                 {action.icon}
               </button>
@@ -69,7 +73,7 @@ export const TableCell = <T extends NestedKeys<T>>({
   if (type === 'text') {
     return (
       <TableWrap>
-        {prefix ? `${prefix} ${toRender}` : <>{toRender}</>}
+        {prefix ? `${prefix} ${String(toRender)}` : <>{toRender}</>}
       </TableWrap>
     );
   }
@@ -86,15 +90,12 @@ export const TableCell = <T extends NestedKeys<T>>({
       </TableWrap>
     );
   }
-  if (type === 'element') {
-    if (!element)
-      return (
-        <TableWrap>
-          <></>
-        </TableWrap>
-      );
-    return <TableWrap>{element(row)}</TableWrap>;
-  }
 
-  return <TableWrap>{locale.noValue}</TableWrap>;
+  if (!element)
+    return (
+      <TableWrap>
+        <></>
+      </TableWrap>
+    );
+  return <TableWrap>{element(row)}</TableWrap>;
 };

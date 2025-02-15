@@ -24,7 +24,7 @@ export type NestedKeys<T> = {
       }
     : T[K1];
 };
-export interface ColumnDefinitionType<T> {
+export type ColumnDefinitionType<T> = {
   key: keyof T | 'actions';
   subKey?: SubKeys<T>;
   prefix?: string;
@@ -36,17 +36,17 @@ export interface ColumnDefinitionType<T> {
   className?: string;
   type?: TableCellType;
   element?: (row: T) => JSX.Element;
-}
+};
 
-export interface TableProps<T, K extends keyof T> {
-  data: Array<T> | undefined;
+export type TableProps<T, K extends keyof T> = {
+  data: T[] | undefined;
   columns: ColumnDefinitionType<T>[];
   paginatorProps?: PaginatorInfo;
   currentPageSize?: number;
   currentPage?: number;
   checkbox?: boolean;
   multiSelect?: string[];
-  searchTerm?: Partial<{ [x in K]: string }>;
+  searchTerm?: Partial<Record<K, string>>;
   globalSearchTerm?: string;
   onSearchChange?: (searchTerm: string, column: K | string) => void;
   onGlobalSearchChange?: (searchTerm: string) => void;
@@ -59,11 +59,11 @@ export interface TableProps<T, K extends keyof T> {
   styles?: TableStyles;
   locale?: localeConfig;
   disablePagination?: boolean;
-}
+};
 
-export interface TableHeaderProps<T, K extends keyof T> {
-  columns: Array<ColumnDefinitionType<T>>;
-  searchTerm?: Partial<{ [x in K]: string }>;
+export type TableHeaderProps<T, K extends keyof T> = {
+  columns: ColumnDefinitionType<T>[];
+  searchTerm?: Partial<Record<K, string>>;
   globalSearchTerm?: string;
   onSearchChange?: (searchTerm: string, column: K | string) => void;
   onGlobalSearchChange?: (searchTerm: string) => void;
@@ -71,28 +71,28 @@ export interface TableHeaderProps<T, K extends keyof T> {
   disableSearch?: boolean;
   styles: TableStyles;
   locale: localeConfig;
-}
+};
 
-export interface TableRowsProps<T> {
-  data: Array<T>;
-  columns: Array<ColumnDefinitionType<T>>;
+export type TableRowsProps<T> = {
+  data: T[];
+  columns: ColumnDefinitionType<T>[];
   checkbox?: boolean;
   multiSelect?: string[];
   onMultiSelectChange?: (selectedItem: string, added: boolean) => void;
   isLoading?: boolean;
   styles: TableStyles;
   locale: localeConfig;
-}
+};
 
-export interface TableCellProps<T> {
+export type TableCellProps<T> = {
   column: ColumnDefinitionType<T>;
   row: T;
   index: number;
   styles: TableStyles;
   locale: localeConfig;
-}
+};
 
-export interface TableFooterProps {
+export type TableFooterProps = {
   currentPageSize: number;
   currentPage: number;
   onNextPage?: (maxPage: number) => void;
@@ -101,22 +101,22 @@ export interface TableFooterProps {
   paginatorProps: PaginatorInfo;
   styles: TableStyles;
   locale: localeConfig;
-}
+};
 
-export interface TableActionsProps<T> {
+export type TableActionsProps<T> = {
   icon: JSX.Element;
   styles: string;
   onClick: (rowData: T) => void;
   onAuxClick?: (rowData: T) => void;
-}
+};
 
-export type SearchType<T> = Partial<{ [x in keyof T | string]: string }>;
-export type ColumnType<T> = Array<ColumnDefinitionType<T>>;
+export type SearchType<T> = Partial<Record<keyof T | string, string>>;
+export type ColumnType<T> = ColumnDefinitionType<T>[];
 export type TableWrapProps = {
   children: ReactNode;
 };
 
-export interface TableReturn<T> {
+export type TableReturn<T> = {
   page: number;
   pageSize: number;
   multiSelect: string[];
@@ -128,7 +128,7 @@ export interface TableReturn<T> {
   pageSizeChangeHandler: (size: number) => void;
   onMultiSelectChange: (value: string, checked: boolean) => void;
   resetTable: () => void;
-}
+};
 
 export type localeConfig = {
   searchPlaceholder: string;

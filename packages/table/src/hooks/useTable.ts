@@ -10,10 +10,13 @@ export function useTable<T extends object>(
   const [multiSelect, setMultiSelect] = useState<string[]>([]);
   const tableCard = useRef<HTMLDivElement>(null);
 
-  const nextPageHandler = (maxPage: number) =>
+  const nextPageHandler = (maxPage: number) => {
     SetPage((prev) => (prev < maxPage ? prev + 1 : prev));
+  };
 
-  const prevPageHandler = () => SetPage((prev) => (prev > 1 ? prev - 1 : prev));
+  const prevPageHandler = () => {
+    SetPage((prev) => (prev > 1 ? prev - 1 : prev));
+  };
 
   const pageSizeChangeHandler = (size: number) => {
     SetPageSize(size);
@@ -23,10 +26,13 @@ export function useTable<T extends object>(
     }
   };
 
-  const onMultiSelectChange = (value: string, checked: boolean) =>
-    checked
-      ? setMultiSelect((prev) => [...prev, value])
-      : setMultiSelect((prev) => prev.filter((item) => item !== value));
+  const onMultiSelectChange = (value: string, checked: boolean) => {
+    if (checked) {
+      setMultiSelect((prev) => [...prev, value]);
+      return;
+    }
+    setMultiSelect((prev) => prev.filter((item) => item !== value));
+  };
 
   const onSearchChangedHandler = (key: keyof T | string, value: string) => {
     SetSearchTerm((prev) => ({

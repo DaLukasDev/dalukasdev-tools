@@ -2,13 +2,13 @@ import { useMemo, type FC } from 'react';
 import { Select } from '@dalukasdev/ui';
 import type { localeConfig, TableFooterProps, TableStyles } from '../@types';
 
-interface IndexesProps {
+type IndexesProps = {
   lowerIndex: number;
   upperIndex: number;
   total: number;
   styles: TableStyles;
   locale: localeConfig;
-}
+};
 const Indexes: FC<IndexesProps> = ({
   lowerIndex,
   total,
@@ -24,13 +24,13 @@ const Indexes: FC<IndexesProps> = ({
   </span>
 );
 
-interface ButtonsProps {
+type ButtonsProps = {
   lastPage?: number;
   onNextPage?: (page: number) => void;
   onPreviousPage?: () => void;
   styles: TableStyles;
   locale: localeConfig;
-}
+};
 const Buttons: FC<ButtonsProps> = ({
   onNextPage,
   onPreviousPage,
@@ -39,11 +39,11 @@ const Buttons: FC<ButtonsProps> = ({
 }) => (
   <div className="mt-2 space-x-0">
     <button
-      onClick={() =>
+      onClick={() => {
         onPreviousPage
           ? onPreviousPage()
-          : console.error('onPreviousPage not implemented')
-      }
+          : console.error('onPreviousPage not implemented');
+      }}
       className={styles.tableFooterButtonStyles}
     >
       <svg
@@ -61,11 +61,10 @@ const Buttons: FC<ButtonsProps> = ({
       </svg>
     </button>
     <button
-      onClick={() =>
-        onNextPage
-          ? onNextPage(lastPage ?? 100)
-          : console.error('onNextPage is not defined')
-      }
+      onClick={() => {
+        if (onNextPage) onNextPage(lastPage ?? 100);
+        else console.error('onNextPage is not defined');
+      }}
       className={styles.tableFooterButtonStyles}
     >
       <svg
@@ -85,13 +84,13 @@ const Buttons: FC<ButtonsProps> = ({
   </div>
 );
 
-interface RowsPerPageProps {
+type RowsPerPageProps = {
   currentPageSize: number;
   total: number;
   onPageSizeChange?: (size: number) => void;
   styles: TableStyles;
   locale: localeConfig;
-}
+};
 const RowsPerPage: FC<RowsPerPageProps> = ({
   currentPageSize,
   onPageSizeChange,
@@ -112,11 +111,11 @@ const RowsPerPage: FC<RowsPerPageProps> = ({
         { label: '50', value: 50 },
         { label: locale.all, value: total },
       ]}
-      onChange={(e) =>
+      onChange={(e) => {
         onPageSizeChange
           ? onPageSizeChange(parseInt(e.target.value))
-          : console.error('onPageSizeChange is not defined')
-      }
+          : console.error('onPageSizeChange is not defined');
+      }}
     />
   </div>
 );

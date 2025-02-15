@@ -1,7 +1,6 @@
-const config = (
-  /** @type {import('plop').NodePlopAPI} */
-  plop
-) => {
+import { NodePlopAPI } from 'plop';
+
+export default function (plop: NodePlopAPI) {
   plop.setGenerator('package', {
     description: 'Create a package in this monorepo',
     prompts: [
@@ -34,6 +33,4 @@ const config = (
       },
     ],
   });
-};
-
-module.exports = config;
+}

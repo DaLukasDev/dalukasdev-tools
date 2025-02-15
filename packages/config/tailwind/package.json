@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@dalukasdev/eslint-config": "workspace:*",
-    "autoprefixer": "^10.4.14",
+    "autoprefixer": "^10.4.20",
     "eslint": "^9.20.1",
     "mini-svg-data-uri": "^1.4.4",
     "postcss": "^8.4.23",

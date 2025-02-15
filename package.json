@@ -16,7 +16,7 @@
   "name": "dalukasdev",
   "packageManager": "pnpm@10.4.0",
   "devDependencies": {
-    "@changesets/cli": "^2.26.1",
+    "@changesets/cli": "^2.27.12",
     "@dalukasdev/eslint-config": "workspace:*",
     "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
     "@manypkg/cli": "^0.23.0",

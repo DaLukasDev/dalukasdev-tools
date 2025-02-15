@@ -64,7 +64,7 @@ export const TableCell = <T extends NestedKeys<T>>({
     );
   }
 
-  const toRender = subKey ? row[key][subKey] : row[key] ?? locale.noValue;
+  const toRender = subKey ? row[key][subKey] : (row[key] ?? locale.noValue);
 
   if (type === 'text') {
     return (

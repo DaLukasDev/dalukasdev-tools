@@ -1,6 +1,6 @@
 import { useMemo, type FC } from 'react';
 import { Select } from '@dalukasdev/ui';
-import type { TableFooterProps, TableStyles, localeConfig } from '../@types';
+import type { localeConfig, TableFooterProps, TableStyles } from '../@types';
 
 interface IndexesProps {
   lowerIndex: number;

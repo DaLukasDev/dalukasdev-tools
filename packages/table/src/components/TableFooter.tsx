@@ -62,8 +62,9 @@ const Buttons: FC<ButtonsProps> = ({
     </button>
     <button
       onClick={() => {
-        if (onNextPage) onNextPage(lastPage ?? 100);
-        else console.error('onNextPage is not defined');
+        onNextPage
+          ? onNextPage(lastPage ?? 100)
+          : console.error('onNextPage is not defined');
       }}
       className={styles.tableFooterButtonStyles}
     >

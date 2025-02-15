@@ -1,10 +1,10 @@
 import type { FC } from 'react';
 
-interface LoaderProps {
+type LoaderProps = {
   isFullscreen?: boolean;
   height?: string;
   width?: string;
-}
+};
 
 export const Loader: FC<LoaderProps> = ({
   isFullscreen = true,

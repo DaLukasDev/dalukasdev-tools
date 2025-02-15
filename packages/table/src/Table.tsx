@@ -5,7 +5,7 @@ import { defaultStyles } from './config/styles';
 
 export const Table = <
   T extends { id: string } & NestedKeys<T>,
-  K extends keyof T
+  K extends keyof T,
 >({
   data = [],
   columns,

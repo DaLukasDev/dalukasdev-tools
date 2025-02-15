@@ -2,9 +2,7 @@
 
 This is my repo containing all my packages I frequently use across my projects.
 
-
 ## What's inside?
-
 
 ### Apps and Packages
 

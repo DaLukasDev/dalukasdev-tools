@@ -1,16 +1,8 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "@dalukasdev/typescript-config/react-library.json",
   "compilerOptions": {
-    "rootDir": ".",
-    "outDir": "dist",
-    "noEmit": true,
-    "lib": ["esnext", "dom"]
+    "outDir": "dist"
   },
-  "include": [
-    "src/",
-    ".eslintrc.cjs",
-    "../../@types/**/*.d.ts",
-    "tailwind.config.ts"
-  ],
-  "exclude": ["node_modules", ".turbo", "coverage", "dist", "src/**/*.test.ts"]
+  "include": ["src", "eslint.config.mjs"],
+  "exclude": ["node_modules", "dist"]
 }

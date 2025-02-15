@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import { Loader } from '@dalukasdev/ui';
 import type { NestedKeys, TableRowsProps } from '../@types';
 import { TableCell } from './TableCell';
@@ -22,21 +23,21 @@ export const TableRows = <T extends { id: string } & NestedKeys<T>>({
         </tr>
       ) : data.length ? (
         data.map((row, index) => (
-          <tr key={`row-${index}`} className={`${styles.tableRowClasses}`}>
+          <tr key={`row-${String(index)}`} className={styles.tableRowClasses}>
             {checkbox && row.id && (
               <td className={styles.tableCellStyles}>
                 <input
-                  id={`cb-row-${index}`}
+                  id={`cb-row-${String(index)}`}
                   type="checkbox"
                   value={row.id}
                   checked={multiSelect?.includes(row.id)}
-                  onChange={(event) =>
+                  onChange={(event) => {
                     onMultiSelectChange &&
-                    onMultiSelectChange(
-                      event.target.value,
-                      event.target.checked
-                    )
-                  }
+                      onMultiSelectChange(
+                        event.target.value,
+                        event.target.checked
+                      );
+                  }}
                   className={styles.checkboxStyles}
                 />
               </td>

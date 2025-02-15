@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import type { TableHeaderProps } from '../@types';
 
 export const TableHeader = <T, K extends keyof T>({
@@ -12,29 +13,28 @@ export const TableHeader = <T, K extends keyof T>({
   globalSearchTerm,
 }: TableHeaderProps<T, K>): JSX.Element => {
   const headers = columns.map((column, index) => (
-    <th className={styles.tableHeaderClasses} key={`headCell-${index}`}>
+    <th className={styles.tableHeaderClasses} key={`headCell-${String(index)}`}>
       {column.header}
     </th>
   ));
 
   const filterRow = columns.map((column, index) => (
-    <th className={styles.searchHeaderClasses} key={`filterCell-${index}`}>
+    <th
+      className={styles.searchHeaderClasses}
+      key={`filterCell-${String(index)}`}
+    >
       {column.searchable && (
         <input
-          value={
-            (searchTerm &&
-              searchTerm[column.searchKey ? column.searchKey : column.key]) ??
-            ''
-          }
+          value={searchTerm?.[column.searchKey ?? column.key] ?? ''}
           placeholder={locale.searchPlaceholder}
           className={styles.searchInputClasses}
-          onChange={(e) =>
+          onChange={(e) => {
             onSearchChange
               ? column.searchKey
                 ? onSearchChange(column.searchKey.toString(), e.target.value)
                 : onSearchChange(column.key.toString(), e.target.value)
-              : console.error('onSearchChange is not implemented')
-          }
+              : console.error('onSearchChange is not implemented');
+          }}
         />
       )}
     </th>
@@ -46,11 +46,11 @@ export const TableHeader = <T, K extends keyof T>({
         value={globalSearchTerm ?? ''}
         placeholder={locale.searchPlaceholder}
         className={styles.globalSearchInputClasses}
-        onChange={(e) =>
+        onChange={(e) => {
           onGlobalSearchChange
             ? onGlobalSearchChange(e.target.value)
-            : console.error('onSearchChange is not implemented')
-        }
+            : console.error('onSearchChange is not implemented');
+        }}
       />
     </th>
   );

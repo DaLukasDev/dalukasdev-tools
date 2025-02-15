@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@dalukasdev/table": "workspace:*",
-    "@dalukasdev/tailwind": "workspace:*",
     "@dalukasdev/ui": "workspace:*",
     "next": "^15.1.7",
     "react": "^19.0.0",
@@ -18,13 +17,14 @@
   },
   "devDependencies": {
     "@dalukasdev/eslint-config": "workspace:*",
+    "@tailwindcss/postcss": "^4.0.6",
     "@types/node": "^22.13.4",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "autoprefixer": "^10.4.20",
     "mini-svg-data-uri": "^1.4.4",
     "postcss": "^8.5.2",
-    "tailwindcss": "^3.3.2",
+    "tailwindcss": "^4.0.6",
     "typescript": "^5.7.3"
   }
 }

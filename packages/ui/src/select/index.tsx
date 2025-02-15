@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC, JSX } from 'react';
 
 type SelectProps = JSX.IntrinsicElements['select'] & {
   options: Array<{ label: string; value: number }>;

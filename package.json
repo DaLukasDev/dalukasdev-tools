@@ -6,7 +6,7 @@
     "lint": "turbo run lint",
     "tsc": "turbo run tsc",
     "lint:fix": "turbo run lint -- --fix ",
-    "mp:check": "manypkg check |& grep -v '@workspace'",
+    "mp:check": "manypkg check",
     "clean": "turbo run clean && rm -rf ./node_modules ./pnpm-lock.yaml",
     "format": "prettier --write \"**/*.{js,cjs,mjs,ts,tsx,md,json}\" --ignore-path .gitignore",
     "plop": "plop",
@@ -15,11 +15,11 @@
   },
   "name": "dalukasdev",
   "packageManager": "pnpm@10.4.0",
-  "dependencies": {
+  "devDependencies": {
     "@changesets/cli": "^2.26.1",
     "@dalukasdev/eslint-config": "workspace:*",
     "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
-    "@manypkg/cli": "^0.20.0",
+    "@manypkg/cli": "^0.23.0",
     "eslint": "^8.40.0",
     "plop": "^3.1.2",
     "prettier": "^2.8.8",

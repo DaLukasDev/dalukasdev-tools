@@ -1,8 +1,16 @@
 {
-  "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
+  "$schema": "https://unpkg.com/@changesets/config@3.0.5/schema.json",
   "changelog": "@changesets/cli/changelog",
   "commit": false,
-  "fixed": [["@dalukasdev/ui", "@dalukasdev/table", "@dalukasdev/utils"]],
+  "fixed": [
+    [
+      "@dalukasdev/ui",
+      "@dalukasdev/table",
+      "@dalukasdev/utils",
+      "@dalukasdev/eslint-config",
+      "@dalukasdev/typescript-config"
+    ]
+  ],
   "linked": [],
   "access": "restricted",
   "baseBranch": "main",

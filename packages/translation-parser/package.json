@@ -12,8 +12,8 @@
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "tsc": "tsc --noEmit",
-    "build": "tsup src/index.ts --format cjs,esm --dts --external fast-csv minimist",
-    "watch": "tsup src/index.ts --format cjs,esm --dts --watch --external fast-csv minimist",
+    "build": "tsup src/index.ts --format cjs,esm --dts --minify",
+    "watch": "tsup src/index.ts --format cjs,esm --dts --watch",
     "clean": "rm -rf node_modules .turbo",
     "prettier:fix": "prettier --write \"src/**/*.ts*\"",
     "prettier:check": "prettier --check \"src/**/*.ts*\""

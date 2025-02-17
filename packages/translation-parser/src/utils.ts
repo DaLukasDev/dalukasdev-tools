@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import chalk, { type ForegroundColorName } from 'chalk';
-import { parse as csvParse } from 'fast-csv';
+import { parse as csvParse, write as csvStringify } from 'fast-csv';
 import { glob } from 'glob';
 import minimist from 'minimist';
 
@@ -11,7 +11,7 @@ export const prepareKeyForSearch = (key: string): string => {
   return strippedKey.replace(/[-.*+?^${}()|[\]\\]/g, '\\$&');
 };
 
-type TranslationRow = { Key: string; [a: string]: string };
+export type TranslationRow = { Key: string; [a: string]: string };
 
 export const readTranslations = async (
   filePath: string
@@ -122,7 +122,7 @@ export const findUnusedTranslations = (
 
 const extractTranslationKeys = (content: string) => {
   const tFunctionRegex =
-    /(?:^|\s|\()(?:\$?t)\(\s*['"`]((?:(?!['"`]\s*[,)}]).)*?)['"`]\s*\)/g;
+    /(?:^|[^a-zA-Z0-9])(?:\$?t)\(\s*['"`]((?:(?!['"`]).)*?)['"`](?:\s*,\s*\{[^}]*\})?\s*\)/g;
   const keys = new Set<string>();
 
   let match;
@@ -163,4 +163,53 @@ export const findMissingTranslations = (
   }
 
   return Array.from(foundKeys).filter((key) => !translationKeys.includes(key));
+};
+
+export const createObjectFromMissingTranslations = (
+  missingTranslations: string[],
+  headers: string[]
+): { Key: string; [a: string]: string }[] =>
+  missingTranslations.map((key) => ({
+    Key: key,
+    ...headers.reduce<Record<string, string>>(
+      (prev, curr) =>
+        curr === 'Key'
+          ? prev
+          : {
+              ...prev,
+              [curr]: '',
+            },
+      {}
+    ),
+  }));
+
+export const writeTranslationsToFile = async (
+  translations: TranslationRow[],
+  filePath: string
+) => {
+  await new Promise((resolve, reject) => {
+    const writeStream = fs.createWriteStream(filePath);
+    csvStringify(translations, { headers: true })
+      .pipe(writeStream)
+      .on('finish', () => {
+        resolve(true);
+      })
+      .on('error', reject);
+  });
+};
+
+export const findDuplicateTranslationsIndices = (
+  translations: TranslationRow[]
+) => {
+  const seen = new Set<string>();
+  const duplicateTranslationsIndices: number[] = [];
+
+  translations.forEach((translation, index) => {
+    const currentKey = prepareKeyForSearch(translation.Key);
+    if (seen.has(currentKey)) {
+      duplicateTranslationsIndices.push(index);
+    }
+    seen.add(currentKey);
+  });
+  return duplicateTranslationsIndices;
 };

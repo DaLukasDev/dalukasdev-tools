@@ -1,5 +1,11 @@
 # @dalukasdev/table
 
+## 0.1.9
+
+### Patch Changes
+
+- e32148e: Translation parser bugfixes
+
 ## 0.1.8
 
 ### Patch Changes

@@ -8,6 +8,7 @@ import {
   getAllCodeFiles,
   logger,
   multibar,
+  newTranslationSorter,
   parseArgs,
   readTranslations,
   writeTranslationsToFile,
@@ -88,7 +89,7 @@ const main = async () => {
 
   if (shouldSort && !isSorted) {
     logger('Sorting translations alphabetically...', 'cyan');
-    newTranslations.sort((a, b) => a.Key.localeCompare(b.Key));
+    newTranslations.sort(newTranslationSorter);
     logger('Sorted translations', 'green');
   }
   if (shouldSort && isSorted) {

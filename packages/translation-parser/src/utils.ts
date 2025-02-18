@@ -56,7 +56,7 @@ export const readTranslations = async (
       .on('data', (row: TranslationRow) => {
         translations.push(row);
         translationKeys.push(row.Key);
-        loadingBar.update(translationKeys.length - 1);
+        loadingBar.update(translationKeys.length);
       })
       .on('end', () => {
         loadingBar.stop();
@@ -146,9 +146,8 @@ export const findUnusedTranslations = (
   codeFiles: string[]
 ) => {
   const unusedTranslations: string[] = [];
-  const totalSearches = translations.length - 1;
 
-  const searchBar = multibar.create(totalSearches, 0, {
+  const searchBar = multibar.create(translations.length, 0, {
     label: 'Searching for unused translations...',
   });
 
@@ -256,6 +255,7 @@ export const writeTranslationsToFile = async (
     csvStringify(translations, { headers: true })
       .pipe(writeStream)
       .on('finish', () => {
+        fs.appendFileSync(filePath, '\n');
         resolve(true);
       })
       .on('error', reject);

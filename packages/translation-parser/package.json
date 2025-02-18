@@ -1,0 +1,41 @@
+{
+  "name": "@dalukasdev/translation-parser",
+  "version": "0.1.7",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.mjs",
+  "license": "MIT",
+  "sideEffects": false,
+  "bin": {
+    "translation-parser": "dist/index.js"
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "tsc": "tsc --noEmit",
+    "build": "tsup src/index.ts --format cjs,esm --dts --minify",
+    "watch": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "clean": "rm -rf node_modules .turbo",
+    "prettier:fix": "prettier --write \"src/**/*.ts*\"",
+    "prettier:check": "prettier --check \"src/**/*.ts*\""
+  },
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "cli-progress": "^3.12.0",
+    "fast-csv": "^5.0.2",
+    "glob": "^11.0.1",
+    "minimist": "^1.2.8"
+  },
+  "devDependencies": {
+    "@dalukasdev/eslint-config": "workspace:*",
+    "@dalukasdev/typescript-config": "workspace:*",
+    "@types/cli-progress": "3.11.6",
+    "@types/minimist": "^1.2.5",
+    "@types/node": "^22.13.4",
+    "eslint": "^9.20.1",
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

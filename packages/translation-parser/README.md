@@ -1,11 +1,11 @@
-# `@dalukasdev/translation-deduper`
+# `@dalukasdev/translation-parser`
 
 Deduplicates translations in a CSV file.
 
 ## Usage
 
 ```bash
-npx @dalukasdev/translation-deduper <file>
+npx @dalukasdev/translation-parser <file>
 ```
 
 ## Options

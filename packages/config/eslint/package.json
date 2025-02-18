@@ -3,7 +3,7 @@
   "main": "index.js",
   "license": "MIT",
   "type": "module",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "scripts": {
     "clean": "rm -rf node_modules .turbo",
     "prettier:fix": "prettier --write \"**/*.js*\"",

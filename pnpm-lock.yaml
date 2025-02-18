@@ -194,11 +194,14 @@ importers:
         specifier: ^5.7.3
         version: 5.7.3
 
-  packages/translation-deduper:
+  packages/translation-parser:
     dependencies:
       chalk:
         specifier: ^5.4.1
         version: 5.4.1
+      cli-progress:
+        specifier: ^3.12.0
+        version: 3.12.0
       fast-csv:
         specifier: ^5.0.2
         version: 5.0.2
@@ -215,6 +218,9 @@ importers:
       '@dalukasdev/typescript-config':
         specifier: workspace:*
         version: link:../config/typescript
+      '@types/cli-progress':
+        specifier: 3.11.6
+        version: 3.11.6
       '@types/minimist':
         specifier: ^1.2.5
         version: 1.2.5
@@ -1016,6 +1022,9 @@ packages:
   '@tailwindcss/postcss@4.0.6':
     resolution: {integrity: sha512-noTaGPHjGCXTCc487TWnfAEN0VMjqDAecssWDOsfxV2hFrcZR0AHthX7IdY/0xHTg/EtpmIPdssddlZ5/B7JnQ==}
 
+  '@types/cli-progress@3.11.6':
+    resolution: {integrity: sha512-cE3+jb9WRlu+uOSAugewNpITJDt1VF8dHOopPO4IABFc3SXYL5WE/+PTz/FCdZRRfIujiWW3n3aMbv1eIGVRWA==}
+
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
 
@@ -1248,6 +1257,10 @@ packages:
   ci-info@3.9.0:
     resolution: {integrity: sha512-NIxF55hv4nSqQswkAeiOi1r83xy8JldOFDTWiug55KBu9Jnblncd2U6ViHmYgHf01TPZS77NJBhBMKdWj9HQMQ==}
     engines: {node: '>=8'}
+
+  cli-progress@3.12.0:
+    resolution: {integrity: sha512-tRkV3HJ1ASwm19THiiLIXLO7Im7wlTuKnvkYaTkyoAPefqjNg7W7DHKUlGRxy9vxDvbyCYQkQozvptuMkGCg8A==}
+    engines: {node: '>=4'}
 
   client-only@0.0.1:
     resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
@@ -3480,6 +3493,10 @@ snapshots:
       postcss: 8.5.2
       tailwindcss: 4.0.6
 
+  '@types/cli-progress@3.11.6':
+    dependencies:
+      '@types/node': 22.13.4
+
   '@types/estree@1.0.6': {}
 
   '@types/json-schema@7.0.15': {}
@@ -3755,6 +3772,10 @@ snapshots:
       readdirp: 4.1.2
 
   ci-info@3.9.0: {}
+
+  cli-progress@3.12.0:
+    dependencies:
+      string-width: 4.2.3
 
   client-only@0.0.1: {}
 

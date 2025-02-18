@@ -1,11 +1,13 @@
 import {
   checkAlphabeticalOrder,
   createObjectFromMissingTranslations,
+  exitErrorIfCi,
   findDuplicateTranslationsIndices,
   findMissingTranslations,
   findUnusedTranslations,
   getAllCodeFiles,
   logger,
+  multibar,
   parseArgs,
   readTranslations,
   writeTranslationsToFile,
@@ -26,11 +28,13 @@ const main = async () => {
   const filePath = args._[0];
   const { translationKeys, translations, headers } =
     await readTranslations(filePath);
+  multibar.stop();
 
   const files = await getAllCodeFiles();
 
   const unusedTranslations = findUnusedTranslations(translationKeys, files);
 
+  multibar.stop();
   if (unusedTranslations.length > 0) {
     logger(unusedTranslations.length, 'red');
     logger(unusedTranslations.join('\n'), 'red');
@@ -60,11 +64,14 @@ const main = async () => {
 
   if (shouldAdd) {
     const missingTranslations = findMissingTranslations(translationKeys, files);
+    multibar.stop();
     if (missingTranslations.length === 0) {
       logger('No missing translations found', 'green');
     }
+
     if (missingTranslations.length > 0) {
-      logger('Adding missing translations...', 'cyan');
+      logger('Missing translations found, adding them...', 'cyan');
+      exitErrorIfCi();
       newTranslations.push(
         ...createObjectFromMissingTranslations(missingTranslations, headers)
       );
@@ -106,8 +113,28 @@ const main = async () => {
   }
 
   await writeTranslationsToFile(newTranslations, filePath);
+
+  if (
+    duplicateTranslationsIndices.length > 0 ||
+    unusedTranslations.length > 0 ||
+    !isSorted
+  ) {
+    exitErrorIfCi();
+  }
+  process.exit(0);
 };
 
 main().catch((e: unknown) => {
   console.error(e);
+});
+
+process.on('exit', () => {
+  multibar.stop();
+});
+
+['SIGINT', 'SIGTERM', 'SIGQUIT'].forEach((signal) => {
+  process.on(signal, () => {
+    multibar.stop();
+    process.exit(0);
+  });
 });

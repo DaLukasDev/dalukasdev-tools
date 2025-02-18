@@ -237,7 +237,7 @@ export const createObjectFromMissingTranslations = (
           ? prev
           : {
               ...prev,
-              [curr]: '',
+              [curr]: 'TODO TRANSLATION',
             },
       {}
     ),
@@ -247,6 +247,10 @@ export const writeTranslationsToFile = async (
   translations: TranslationRow[],
   filePath: string
 ) => {
+  if (process.env.CI) {
+    logger('Skipping writing translations to file in CI', 'yellow');
+    return;
+  }
   await new Promise((resolve, reject) => {
     const writeStream = fs.createWriteStream(filePath);
     csvStringify(translations, { headers: true })
@@ -279,3 +283,6 @@ export const exitErrorIfCi = () => {
     process.exit(1);
   }
 };
+
+export const newTranslationSorter = (a: TranslationRow, b: TranslationRow) =>
+  sanitizeKey(a.Key).localeCompare(sanitizeKey(b.Key));
